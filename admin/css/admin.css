@@ -1,0 +1,1098 @@
+/**
+ * HappyBites Admin CSS
+ *
+ * @package HappyBites
+ * @since 1.0.0
+ */
+
+.happybites-admin-container {
+    margin-top: 20px;
+}
+
+.happybites-admin-header {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.happybites-admin-header h2 {
+    margin-top: 0;
+    color: #23282d;
+}
+
+.happybites-admin-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.happybites-admin-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #0073aa;
+}
+
+.happybites-admin-card h3 {
+    margin-top: 0;
+    color: #23282d;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.happybites-admin-card p {
+    margin: 10px 0;
+}
+
+.happybites-admin-card code {
+    background: #f1f1f1;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: monospace;
+}
+
+.happybites-settings-info {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.happybites-settings-info h3 {
+    margin-top: 0;
+    color: #23282d;
+}
+
+.happybites-settings-info ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+.happybites-settings-info li {
+    margin: 5px 0;
+}
+
+/* Dil yönetimi stilleri */
+.happybites-languages-container {
+    margin: 20px 0;
+}
+
+.languages-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.language-checkbox {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    background: #f9f9f9;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.language-checkbox:hover {
+    background: #f0f0f0;
+    border-color: #0073aa;
+}
+
+.language-checkbox input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+.language-checkbox input[type="checkbox"]:checked+.language-name {
+    color: #0073aa;
+    font-weight: 600;
+}
+
+.language-name {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.language-code {
+    color: #666;
+    font-size: 12px;
+    font-style: italic;
+}
+
+/* Tab sistemi stilleri */
+.happybites-tabs {
+    margin: 20px 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.happybites-tab-nav {
+    display: flex;
+    background: #f9f9f9;
+    border-bottom: 1px solid #e0e0e0;
+    flex-wrap: wrap;
+}
+
+.happybites-tab-nav button {
+    background: transparent;
+    border: none;
+    padding: 10px 25px;
+    line-height: 1 !important;
+    margin: 0;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-right: 1px solid #e0e0e0;
+    color: #666;
+}
+
+.happybites-tab-nav button:last-child {
+    border-right: none;
+}
+
+.happybites-tab-nav button:hover {
+    background: #f0f0f0;
+    color: #333;
+}
+
+.happybites-tab-nav button.active {
+    background: #0073aa;
+    color: #fff;
+    border-bottom: 3px solid #005a87;
+}
+
+.happybites-tab-content {
+    display: none;
+    padding: 25px;
+    background: #fff;
+}
+
+.happybites-tab-content.active {
+    display: block;
+}
+
+.happybites-tab-content h4 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #0073aa;
+    color: #0073aa;
+    font-size: 18px;
+}
+
+/* Dil alanları */
+.language-field {
+    margin-bottom: 10px;
+}
+
+.language-field label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 14px;
+}
+
+.language-field input[type="text"],
+.language-field textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.language-field input[type="text"]:focus,
+.language-field textarea:focus {
+    outline: none;
+    border-color: #0073aa;
+    box-shadow: 0 0 0 2px rgba(0, 115, 170, 0.1);
+}
+
+.language-field textarea {
+    min-height: 120px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+/* Dil alanları içindeki dinamik listeler */
+.language-field .ingredients-list-tr,
+.language-field .ingredients-list-en,
+.language-field .ingredients-list-de,
+.language-field .ingredients-list-fr,
+.language-field .ingredients-list-es,
+.language-field .ingredients-list-it,
+.language-field .ingredients-list-ru,
+.language-field .ingredients-list-ar,
+.language-field .ingredients-list-zh,
+.language-field .ingredients-list-ja,
+.language-field .ingredients-list-ko,
+.language-field .allergens-list-tr,
+.language-field .allergens-list-en,
+.language-field .allergens-list-de,
+.language-field .allergens-list-fr,
+.language-field .allergens-list-es,
+.language-field .allergens-list-it,
+.language-field .allergens-list-ru,
+.language-field .allergens-list-ar,
+.language-field .allergens-list-zh,
+.language-field .allergens-list-ja,
+.language-field .allergens-list-ko {
+    margin-bottom: 15px;
+}
+
+.language-field .ingredient-item,
+.language-field .allergen-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 12px;
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.language-field .ingredient-item input,
+.language-field .allergen-item input {
+    flex: 1;
+    margin-right: 10px;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.language-field .ingredient-item input:first-child {
+    flex: 2;
+}
+
+.language-field .ingredient-item input:last-of-type,
+.language-field .allergen-item input:last-of-type {
+    flex: 1;
+}
+
+.language-field .remove-ingredient,
+.language-field .remove-allergen {
+    background: #dc3232 !important;
+    color: #fff !important;
+    border: none !important;
+    padding: 6px 12px !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    font-size: 12px !important;
+}
+
+.language-field .remove-ingredient:hover,
+.language-field .remove-allergen:hover {
+    background: #a00 !important;
+}
+
+.language-field .add-ingredient-tr,
+.language-field .add-ingredient-en,
+.language-field .add-ingredient-de,
+.language-field .add-ingredient-fr,
+.language-field .add-ingredient-es,
+.language-field .add-ingredient-it,
+.language-field .add-ingredient-ru,
+.language-field .add-ingredient-ar,
+.language-field .add-ingredient-zh,
+.language-field .add-ingredient-ja,
+.language-field .add-ingredient-ko,
+.language-field .add-allergen-tr,
+.language-field .add-allergen-en,
+.language-field .add-allergen-de,
+.language-field .add-allergen-fr,
+.language-field .add-allergen-es,
+.language-field .add-allergen-it,
+.language-field .add-allergen-ru,
+.language-field .add-allergen-ar,
+.language-field .add-allergen-zh,
+.language-field .add-allergen-ja,
+.language-field .add-allergen-ko {
+    background: #0073aa !important;
+    color: #fff !important;
+    border: none !important;
+    padding: 2px 20px !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    margin-top: 10px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+}
+
+.language-field .add-ingredient-tr:hover,
+.language-field .add-ingredient-en:hover,
+.language-field .add-ingredient-de:hover,
+.language-field .add-ingredient-fr:hover,
+.language-field .add-ingredient-es:hover,
+.language-field .add-ingredient-it:hover,
+.language-field .add-ingredient-ru:hover,
+.language-field .add-ingredient-ar:hover,
+.language-field .add-ingredient-zh:hover,
+.language-field .add-ingredient-ja:hover,
+.language-field .add-ingredient-ko:hover,
+.language-field .add-allergen-tr:hover,
+.language-field .add-allergen-en:hover,
+.language-field .add-allergen-de:hover,
+.language-field .add-allergen-fr:hover,
+.language-field .add-allergen-es:hover,
+.language-field .add-allergen-it:hover,
+.language-field .add-allergen-ru:hover,
+.language-field .add-allergen-ar:hover,
+.language-field .add-allergen-zh:hover,
+.language-field .add-allergen-ja:hover,
+.language-field .add-allergen-ko:hover {
+    background: #005a87 !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .happybites-admin-content {
+        grid-template-columns: 1fr;
+    }
+
+    .languages-list {
+        grid-template-columns: 1fr;
+    }
+
+    .happybites-tab-nav {
+        flex-wrap: wrap;
+    }
+
+    .happybites-tab-nav button {
+        flex: 1;
+        min-width: 120px;
+        margin-bottom: 5px;
+    }
+
+    .language-field .ingredient-item,
+    .language-field .allergen-item {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .language-field .ingredient-item input,
+    .language-field .allergen-item input {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .language-field .remove-ingredient,
+    .language-field .remove-allergen {
+        align-self: flex-end;
+    }
+
+    .happybites-tab-content {
+        padding: 15px;
+    }
+
+    .language-field {
+        padding: 12px;
+    }
+}
+
+/* Kategori formları için stiller */
+.happybites-category-fields {
+    margin: 20px 0;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+}
+
+.happybites-category-fields h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #23282d;
+    font-size: 18px;
+    border-bottom: 2px solid #0073aa;
+    padding-bottom: 10px;
+}
+
+/* Kategori form alanları */
+.happybites-category-fields .form-field {
+    margin-bottom: 20px;
+}
+
+.happybites-category-fields .form-field label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 14px;
+}
+
+.happybites-category-fields .form-field input[type="text"],
+.happybites-category-fields .form-field textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.happybites-category-fields .form-field input[type="text"]:focus,
+.happybites-category-fields .form-field textarea:focus {
+    outline: none;
+    border-color: #0073aa;
+    box-shadow: 0 0 0 2px rgba(0, 115, 170, 0.1);
+}
+
+.happybites-category-fields .form-field textarea {
+    min-height: 100px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+.happybites-category-fields .form-field p.description {
+    margin-top: 5px;
+    color: #666;
+    font-size: 13px;
+    font-style: italic;
+}
+
+/* Kategori düzenleme formu için özel stiller */
+.form-field[colspan="2"] {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    margin: 20px 0;
+}
+
+.form-field[colspan="2"] h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #23282d;
+    font-size: 18px;
+    border-bottom: 2px solid #0073aa;
+    padding-bottom: 10px;
+}
+
+/* Yeni ayarlar için stiller */
+
+/* Sosyal Medya Container */
+.happybites-social-media-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.social-media-field {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+}
+
+.social-media-field label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 14px;
+}
+
+.social-media-field input[type="url"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.social-media-field input[type="url"]:focus {
+    outline: none;
+    border-color: #0073aa;
+    box-shadow: 0 0 0 2px rgba(0, 115, 170, 0.1);
+}
+
+/* Renk Seçici */
+.color-picker {
+    width: 60px !important;
+    height: 40px !important;
+    padding: 0 !important;
+    border: 2px solid #ddd !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    background: none !important;
+}
+
+.color-picker:hover {
+    border-color: #0073aa !important;
+}
+
+/* Tema Modu Seçici */
+select[name="happybites_theme_mode[mode]"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    min-width: 200px;
+    background: #fff url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%206l5%205%205-5%202%201-7%207-7-7%202-1z%22%20fill%3D%22%23a0a5aa%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+select[name="happybites_theme_mode[mode]"]:focus {
+    outline: none;
+    border-color: #0073aa;
+    box-shadow: 0 0 0 2px rgba(0, 115, 170, 0.1);
+}
+
+/* Çalışma Saatleri Textarea */
+textarea[name="happybites_working_hours[hours]"] {
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+}
+
+/* Çalışma Saatleri Container */
+.happybites-working-hours-container {
+    background: #f9f9f9;
+    padding: 12px 20px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    margin: 15px 0;
+}
+
+.working-day-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.working-day-row:last-child {
+    border-bottom: none;
+}
+
+.day-checkbox {
+    display: flex;
+    align-items: center;
+    min-width: 120px;
+}
+
+.day-checkbox input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+.day-checkbox label {
+    font-weight: 600;
+    color: #333;
+    font-size: 14px;
+}
+
+.time-selectors {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.time-selectors select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    background: #fff;
+    min-width: 80px;
+    background: #fff url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%206l5%205%205-5%202%201-7%207-7-7%202-1z%22%20fill%3D%22%23a0a5aa%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+.time-selectors select:focus {
+    outline: none;
+    border-color: #0073aa;
+    box-shadow: 0 0 0 2px rgba(0, 115, 170, 0.1);
+}
+
+.time-separator {
+    font-weight: 600;
+    color: #666;
+    font-size: 16px;
+}
+
+/* Kapalı günler için stil */
+.working-day-row.closed .time-selectors {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.working-day-row.closed .day-checkbox label {
+    color: #999;
+}
+
+/* HTML Bilgi Metni */
+textarea[name="happybites_information[html_info]"] {
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+    background: #f9f9f9;
+}
+
+/* WiFi Alanları */
+input[name="happybites_wifi[ssid]"],
+input[name="happybites_wifi[password]"] {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+input[name="happybites_wifi[ssid]"]:focus,
+input[name="happybites_wifi[password]"]:focus {
+    outline: none;
+    border-color: #0073aa;
+    box-shadow: 0 0 0 2px rgba(0, 115, 170, 0.1);
+}
+
+/* WiFi Şifre Alanı */
+input[name="happybites_wifi[password]"] {
+    font-family: 'Courier New', monospace;
+    letter-spacing: 2px;
+}
+
+/* Restaurant Bilgileri Alanları */
+input[name="happybites_restaurant_info[title]"],
+input[name="happybites_restaurant_info[logo_url]"],
+input[name="happybites_restaurant_info[slogan]"],
+input[name="happybites_restaurant_info[header_bg_url]"],
+input[name="happybites_slug[slug]"] {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+input[name="happybites_restaurant_info[title]"]:focus,
+input[name="happybites_restaurant_info[logo_url]"]:focus,
+input[name="happybites_restaurant_info[slogan]"]:focus,
+input[name="happybites_restaurant_info[header_bg_url]"]:focus,
+input[name="happybites_slug[slug]"]:focus {
+    outline: none;
+    border-color: #0073aa;
+    box-shadow: 0 0 0 2px rgba(0, 115, 170, 0.1);
+}
+
+#qrcode-container {
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    border: 1px solid #005a87;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+#qrcode-container img {
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* Ayarlar Bölümleri için Genel Stiller */
+.form-table th {
+    padding: 20px 10px 20px 0;
+    width: 200px;
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+.form-table td {
+    padding: 15px 10px;
+    line-height: 1.3;
+}
+
+.form-table .description {
+    margin-top: 8px;
+    color: #666;
+    font-style: italic;
+    font-size: 13px;
+}
+
+/* Responsive Ayarlar */
+@media (max-width: 768px) {
+    .happybites-social-media-container {
+        grid-template-columns: 1fr;
+    }
+
+    .social-media-field {
+        margin-bottom: 10px;
+    }
+
+    .form-table th {
+        width: 100%;
+        display: block;
+        padding: 10px 0 5px 0;
+    }
+
+    .form-table td {
+        display: block;
+        padding: 0 0 15px 0;
+    }
+
+    input[name="happybites_restaurant_info[title]"],
+    input[name="happybites_restaurant_info[logo_url]"],
+    input[name="happybites_restaurant_info[slogan]"] {
+        max-width: 100%;
+    }
+}
+
+/* Logo Upload Container */
+.logo-upload-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.logo-upload-container input[type="text"] {
+    flex: 1;
+    background-color: #f9f9f9;
+    cursor: not-allowed;
+}
+
+.logo-upload-container button {
+    white-space: nowrap;
+}
+
+#remove_logo_button {
+    background-color: #dc3232 !important;
+    border-color: #dc3232 !important;
+    color: #fff !important;
+}
+
+#remove_logo_button:hover {
+    background-color: #a00 !important;
+    border-color: #a00 !important;
+}
+
+#logo_preview {
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+}
+
+#logo_preview img {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Header BG Upload Container */
+.header-bg-upload-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.header-bg-upload-container input[type="text"] {
+    flex: 1;
+    background-color: #f9f9f9;
+    cursor: not-allowed;
+}
+
+.header-bg-upload-container button {
+    white-space: nowrap;
+}
+
+#remove_header_bg_button {
+    background-color: #dc3232 !important;
+    border-color: #dc3232 !important;
+    color: #fff !important;
+}
+
+#remove_header_bg_button:hover {
+    background-color: #a00 !important;
+    border-color: #a00 !important;
+}
+
+#header_bg_preview {
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+}
+
+#header_bg_preview img {
+    display: block;
+    margin: 0 auto;
+}
+
+/* TinyMCE Editör Stilleri */
+.wp-editor-container {
+    margin-bottom: 15px;
+}
+
+.wp-editor-area {
+    font-family: 'Courier New', monospace !important;
+    line-height: 1.6 !important;
+}
+
+.wp-editor-container .mce-toolbar {
+    border-bottom: 1px solid #ddd !important;
+}
+
+.wp-editor-container .mce-statusbar {
+    border-top: 1px solid #ddd !important;
+}
+
+/* TinyMCE İçerik Alanı */
+.wp-editor-container .mce-content-body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    padding: 10px !important;
+}
+
+/* TinyMCE Toolbar Butonları */
+.wp-editor-container .mce-btn {
+    background: #f9f9f9 !important;
+    border: 1px solid #ddd !important;
+}
+
+.wp-editor-container .mce-btn:hover {
+    background: #e9e9e9 !important;
+}
+
+.wp-editor-container .mce-btn.mce-active {
+    background: #0073aa !important;
+    color: #fff !important;
+}
+
+/* === Post Types (merged from post-types.css) === */
+/* Meta box stilleri */
+.happybites-menu-details { padding: 0 0 20px 0; }
+.happybites-menu-details h3 { margin: 30px 0 15px 0; padding: 10px 15px; color: #0073aa; border-radius: 4px; font-size: 16px; font-weight: 600; }
+.happybites-menu-details h3:first-child { margin-top: 0; }
+.happybites-menu-details h4 { margin: 20px 0 10px 0; padding: 8px 12px; background: #f0f0f0; border-radius: 3px; font-size: 14px; font-weight: 600; }
+.ingredient-item, .nutrition-item, .allergen-item, .additive-item { display: flex; align-items: center; margin-bottom: 10px; padding: 10px; background: #f9f9f9; border-radius: 4px; border: 1px solid #e0e0e0; }
+.ingredient-item input, .nutrition-item input, .allergen-item input, .additive-item input { flex: 1; margin-right: 10px; padding: 8px; border: 1px solid #ddd; border-radius: 3px; }
+.ingredient-item input:first-child, .nutrition-item input:first-child { flex: 2; }
+.ingredient-item input:last-of-type, .nutrition-item input:last-of-type, .allergen-item input:last-of-type, .additive-item input:last-of-type { flex: 1; }
+.remove-ingredient, .remove-nutrition, .remove-allergen, .remove-additive { background: #dc3232 !important; color: #fff !important; border: none !important; padding: 5px 10px !important; border-radius: 3px !important; cursor: pointer !important; }
+.remove-ingredient:hover, .remove-nutrition:hover, .remove-allergen:hover, .remove-additive:hover { background: #a00 !important; }
+#add-ingredient, #add-nutrition, #add-allergen, #add-additive { background: #0073aa !important; color: #fff !important; border: none !important; padding: 2px 20px !important; border-radius: 3px !important; cursor: pointer !important; margin-top: 10px !important; }
+#add-ingredient:hover, #add-nutrition:hover, #add-allergen:hover, #add-additive:hover { background: #005a87 !important; }
+.ingredients-list, .nutrition-list, .allergens-list, .additives-list { margin-bottom: 15px; }
+.ingredients-list:empty::after { content: 'Henüz içindekiler eklenmemiş.'; display: block; text-align: center; color: #666; font-style: italic; padding: 20px; background: #f9f9f9; border: 2px dashed #ddd; border-radius: 4px; }
+.nutrition-list:empty::after { content: 'Henüz besin değeri eklenmemiş.'; display: block; text-align: center; color: #666; font-style: italic; padding: 20px; background: #f9f9f9; border: 2px dashed #ddd; border-radius: 4px; }
+.allergens-list:empty::after { content: 'Henüz alerjen eklenmemiş.'; display: block; text-align: center; color: #666; font-style: italic; padding: 20px; background: #f9f9f9; border: 2px dashed #ddd; border-radius: 4px; }
+.additives-list:empty::after { content: 'Henüz katkı maddesi eklenmemiş.'; display: block; text-align: center; color: #666; font-style: italic; padding: 20px; background: #f9f9f9; border: 2px dashed #ddd; border-radius: 4px; }
+.tags-list { margin: 15px 0; }
+.tag-checkbox { display: block; margin-bottom: 8px; padding: 8px; background: #f9f9f9; border-radius: 3px; cursor: pointer; }
+.tag-checkbox:hover { background: #f0f0f0; }
+.tag-checkbox input[type="checkbox"] { margin-right: 8px; }
+@media (max-width: 768px) {
+  .ingredient-item, .instruction-item { flex-direction: column; align-items: stretch; }
+  .ingredient-item input, .instruction-item textarea { margin-right: 0; margin-bottom: 10px; }
+  .remove-ingredient, .remove-instruction { align-self: flex-end; }
+}
+.column-menu_category, .column-menu_price, .column-menu_calories, .column-menu_allergens { width: 120px; }
+.column-menu_price { font-weight: bold; color: #0073aa; }
+.column-menu_calories { color: #666; }
+.column-menu_allergens { font-size: 12px; color: #dc3232; }
+.happybites-notification { position: fixed; top: 32px; right: 20px; z-index: 9999; padding: 15px 20px; border-radius: 4px; color: #fff; font-weight: 500; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); animation: slideInRight 0.3s ease; }
+.happybites-notification.success { background: #46b450; }
+.happybites-notification.error { background: #dc3232; }
+.happybites-notification.warning { background: #ffb900; color: #333; }
+@keyframes slideInRight { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+.happybites-loading { opacity: 0.6; pointer-events: none; }
+.happybites-loading::after { content: ''; position: absolute; top: 50%; left: 50%; width: 20px; height: 20px; margin: -10px 0 0 -10px; border: 2px solid #f3f3f3; border-top: 2px solid #0073aa; border-radius: 50%; animation: spin 1s linear infinite; }
+@keyframes spin { 0% { transform: rotate(0deg);} 100% { transform: rotate(360deg);} }
+
+/* Sıralama Sayfası Stilleri */
+.happybites-sort-container {
+    margin: 20px 0;
+}
+
+.sort-instructions {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.sort-instructions p {
+    margin: 0;
+    color: #666;
+}
+
+.menu-sort-container {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.category-item {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    background: #f9f9f9;
+    cursor: move;
+}
+
+.category-item.ui-sortable-helper {
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: #f0f0f0;
+    border-radius: 6px 6px 0 0;
+}
+
+.drag-handle {
+    color: #999;
+    font-size: 18px;
+    margin-right: 10px;
+    cursor: move;
+}
+
+.category-header h3 {
+    margin: 0;
+    flex: 1;
+    font-size: 16px;
+}
+
+.category-actions {
+    margin-left: auto;
+}
+
+.products-container {
+    padding: 15px;
+    background: #fff;
+    border-radius: 0 0 6px 6px;
+}
+
+.product-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    background: #fff;
+    cursor: move;
+}
+
+.product-item.ui-sortable-helper {
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.no-image {
+    font-size: 10px;
+    color: #999;
+    text-align: center;
+}
+
+.product-info {
+    flex: 1;
+}
+
+.product-info h4 {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+}
+
+.product-price {
+    color: #28a745;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.no-products {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    margin: 20px 0;
+}
+
+.sort-actions {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.sort-actions .button {
+    margin: 0 5px;
+}
+
+.ui-sortable-placeholder {
+    border: 2px dashed #ccc;
+    background: #f9f9f9;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.product-item.ui-sortable-placeholder {
+    height: 70px;
+}
+
+/* Loading state */
+.loading {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Success message */
+.success-message {
+    background: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 10px 0;
+    display: none;
+}
+
+/* Error message */
+.error-message {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 10px 0;
+    display: none;
+}

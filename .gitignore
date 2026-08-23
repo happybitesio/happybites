@@ -1,0 +1,18 @@
+# Dependencies
+admin-app/node_modules/
+pwa/node_modules/
+
+# Build artifacts (generated locally)
+admin-app/dist/
+dist/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+
+# Environment
+.env
+.env.*

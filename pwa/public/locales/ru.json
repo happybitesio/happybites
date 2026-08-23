@@ -1,0 +1,103 @@
+{
+  "common": {
+    "loading": "Загрузка...",
+    "error": "Ошибка",
+    "success": "Успешно",
+    "cancel": "Отмена",
+    "close": "Закрыть",
+    "closed": "Закрыто",
+    "save": "Сохранить",
+    "submit": "Отправить",
+    "clear": "Очистить",
+    "all": "Все",
+    "search": "Поиск",
+    "filter": "Фильтр",
+    "results": "результатов",
+    "privacyPolicy": "Политика конфиденциальности"
+  },
+  "menu": {
+    "loading": "Загрузка меню...",
+    "loadingDescription": "Пожалуйста, подождите",
+    "loadError": "Не удалось загрузить меню",
+    "tryAgain": "Повторить",
+    "searchPlaceholder": "Искать блюда...",
+    "searchResults": "Результаты поиска по",
+    "noResults": "Ничего не найдено",
+    "noResultsDescription": "Попробуйте другие ключевые слова",
+    "categories": "Категории",
+    "features": "Особенности",
+    "description": "Описание",
+    "ingredients": "Ингредиенты",
+    "allergens": "Предупреждение об аллергенах",
+    "origin": "Происхождение",
+    "additives": "Добавки",
+    "nutritionFacts": "Пищевая ценность",
+    "portion": "Порция: ",
+    "spiceLevel": "Уровень остроты",
+    "weight": "г",
+    "minutes": "мин"
+  },
+  "filters": {
+    "title": "Фильтры",
+    "tags": "Теги",
+    "spiceLevel": "Острота",
+    "clearAll": "Очистить все фильтры"
+  },
+  "tags": {
+    "popular": "Популярное",
+    "chef_special": "Блюдо от шефа",
+    "vegetarian": "Вегетарианское",
+    "vegan": "Веганское",
+    "organic": "Органическое",
+    "spicy": "Острое",
+    "new_product": "Новинка",
+    "gluten_free": "Без глютена",
+    "lactose_free": "Без лактозы",
+    "seasonal": "Сезонное",
+    "halal": "Халяль",
+    "kosher": "Кошерное",
+    "low_calorie": "Низкокалорийное",
+    "low_sodium": "Мало натрия",
+    "low_sugar": "Мало сахара",
+    "out_of_stock": "Нет в наличии"
+  },
+  "restaurant": {
+    "open": "Открыто",
+    "wifi": "WiFi",
+    "organicIngredients": "Органические ингредиенты",
+    "freshlyPrepared": "Свежеприготовленное",
+    "traditionalFlavors": "Традиционные вкусы",
+    "allRightsReserved": "Создано <a href='https://happybites.io' target='_blank' class='text-primary'>Happybites</a>."
+  },
+  "language": { "select": "Выбрать язык" },
+  "social": { "title": "Социальные сети" },
+  "wifi": {
+    "title": "Информация о подключении WiFi",
+    "description": "Сканируйте QR-код для подключения к WiFi",
+    "ssid": "SSID",
+    "password": "Пароль"
+  },
+  "review": {
+    "title": "Оцените нас",
+    "rateExperience": "Оцените ваш опыт",
+    "service": "Сервис",
+    "taste": "Вкус",
+    "cleanliness": "Чистота",
+    "comments": "Ваши комментарии",
+    "commentsPlaceholder": "Поделитесь своим опытом...",
+    "submitting": "Отправка...",
+    "submitError": "Не удалось отправить отзыв. Попробуйте снова.",
+    "privacyNotice": "Отправленные данные обрабатываются согласно нашей",
+    "privacyPolicy": "Политике конфиденциальности",
+    "thankYou": "Спасибо!",
+    "thankYouMessage": "Ваш отзыв очень важен для нас. Спасибо за вашу оценку!",
+    "customerInfoNote": "Вы можете по желанию оставить контакты, это поможет нам обслужить вас лучше.",
+    "customerName": "Ваше имя",
+    "customerNamePlaceholder": "Введите имя",
+    "customerEmail": "Ваш email",
+    "customerEmailPlaceholder": "example@email.com",
+    "optional": "Необязательно"
+  }
+}
+
+

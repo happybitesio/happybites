@@ -1,0 +1,106 @@
+{
+    "common": {
+      "loading": "読み込み中...",
+      "error": "エラー",
+      "success": "成功",
+      "cancel": "キャンセル",
+      "close": "閉じる",
+      "closed": "閉店",
+      "save": "保存",
+      "submit": "送信",
+      "clear": "クリア",
+      "all": "すべて",
+      "search": "検索",
+      "filter": "フィルター",
+      "results": "件",
+      "privacyPolicy": "プライバシーポリシー"
+    },
+    "menu": {
+      "loading": "メニューを読み込み中...",
+      "loadingDescription": "しばらくお待ちください",
+      "loadError": "メニューの読み込みに失敗しました",
+      "tryAgain": "再試行",
+      "searchPlaceholder": "料理を検索...",
+      "searchResults": "の検索結果",
+      "noResults": "結果が見つかりません",
+      "noResultsDescription": "別のキーワードをお試しください",
+      "categories": "カテゴリー",
+      "features": "特徴",
+      "description": "説明",
+      "ingredients": "材料",
+      "allergens": "アレルギー警告",
+      "origin": "原産地",
+      "additives": "添加物",
+      "nutritionFacts": "栄養成分",
+      "portion": "ポーション: ",
+      "spiceLevel": "辛さレベル",
+      "weight": "g",
+      "minutes": "分"
+    },
+    "filters": {
+      "title": "フィルター",
+      "tags": "タグ",
+      "spiceLevel": "辛さレベル",
+      "clearAll": "すべてのフィルターをクリア"
+    },
+    "tags": {
+      "popular": "人気",
+      "chef_special": "シェフのおすすめ",
+      "vegetarian": "ベジタリアン",
+      "vegan": "ヴィーガン",
+      "organic": "オーガニック",
+      "spicy": "辛い",
+      "new_product": "新商品",
+      "gluten_free": "グルテンフリー",
+      "lactose_free": "ラクトースフリー",
+      "seasonal": "季節限定",
+      "halal": "ハラール",
+      "kosher": "コーシャー",
+      "low_calorie": "低カロリー",
+      "low_sodium": "低ナトリウム",
+      "low_sugar": "低糖",
+      "out_of_stock": "在庫切れ"
+    },
+    "restaurant": {
+      "open": "営業中",
+      "wifi": "Wi-Fi",
+      "organicIngredients": "オーガニック食材",
+      "freshlyPrepared": "作りたて",
+      "traditionalFlavors": "伝統の味",
+      "allRightsReserved": "<a href='https://happybites.io' target='_blank' class='text-primary'>Happybites</a> によって作成されました。"
+    },
+    "language": {
+      "select": "言語を選択"
+    },
+    "social": {
+      "title": "ソーシャルメディア"
+    },
+    "wifi": {
+      "title": "Wi-Fi 接続情報",
+      "description": "QRコードをスキャンしてWi-Fiに接続",
+      "ssid": "SSID",
+      "password": "パスワード"
+    },
+    "review": {
+      "title": "評価する",
+      "rateExperience": "体験を評価してください",
+      "service": "サービス",
+      "taste": "味",
+      "cleanliness": "清潔さ",
+      "comments": "コメント",
+      "commentsPlaceholder": "体験を共有してください...",
+      "submitting": "送信中...",
+      "submitError": "レビューを送信できませんでした。もう一度お試しください。",
+      "privacyNotice": "送信されたデータは当社の",
+      "privacyPolicy": "プライバシーポリシー",
+      "thankYou": "ありがとうございます！",
+      "thankYouMessage": "あなたのフィードバックは非常に貴重です。レビューしていただきありがとうございます！",
+      "customerInfoNote": "任意で連絡先情報を共有できます。これにより、より良いサービスを提供できます！",
+      "customerName": "お名前",
+      "customerNamePlaceholder": "お名前を入力",
+      "customerEmail": "メールアドレス",
+      "customerEmailPlaceholder": "example@email.com",
+      "optional": "任意"
+    }
+  }
+  

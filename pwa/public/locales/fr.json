@@ -1,0 +1,106 @@
+{
+    "common": {
+      "loading": "Chargement...",
+      "error": "Erreur",
+      "success": "Succès",
+      "cancel": "Annuler",
+      "close": "Fermer",
+      "closed": "Fermé",
+      "save": "Enregistrer",
+      "submit": "Soumettre",
+      "clear": "Effacer",
+      "all": "Tout",
+      "search": "Rechercher",
+      "filter": "Filtrer",
+      "results": "résultats",
+      "privacyPolicy": "Politique de confidentialité"
+    },
+    "menu": {
+      "loading": "Chargement du menu...",
+      "loadingDescription": "Veuillez patienter",
+      "loadError": "Échec du chargement du menu",
+      "tryAgain": "Réessayer",
+      "searchPlaceholder": "Rechercher un plat...",
+      "searchResults": "Résultats de recherche pour",
+      "noResults": "Aucun résultat trouvé",
+      "noResultsDescription": "Essayez avec d'autres mots-clés",
+      "categories": "Catégories",
+      "features": "Caractéristiques",
+      "description": "Description",
+      "ingredients": "Ingrédients",
+      "allergens": "Avertissement allergènes",
+      "origin": "Origine",
+      "additives": "Additifs",
+      "nutritionFacts": "Informations nutritionnelles",
+      "portion": "Portion : ",
+      "spiceLevel": "Niveau d'épice",
+      "weight": "g",
+      "minutes": "min"
+    },
+    "filters": {
+      "title": "Filtres",
+      "tags": "Étiquettes",
+      "spiceLevel": "Niveau d'épice",
+      "clearAll": "Effacer tous les filtres"
+    },
+    "tags": {
+      "popular": "Populaire",
+      "chef_special": "Spécialité du chef",
+      "vegetarian": "Végétarien",
+      "vegan": "Vegan",
+      "organic": "Bio",
+      "spicy": "Épicé",
+      "new_product": "Nouveau produit",
+      "gluten_free": "Sans gluten",
+      "lactose_free": "Sans lactose",
+      "seasonal": "Saisonnier",
+      "halal": "Halal",
+      "kosher": "Casher",
+      "low_calorie": "Faible en calories",
+      "low_sodium": "Faible en sodium",
+      "low_sugar": "Faible en sucre",
+      "out_of_stock": "Rupture de stock"
+    },
+    "restaurant": {
+      "open": "Ouvert",
+      "wifi": "Wi-Fi",
+      "organicIngredients": "Ingrédients biologiques",
+      "freshlyPrepared": "Préparé frais",
+      "traditionalFlavors": "Saveurs traditionnelles",
+      "allRightsReserved": "Créé par <a href='https://happybites.io' target='_blank' class='text-primary'>Happybites</a>."
+    },
+    "language": {
+      "select": "Choisir la langue"
+    },
+    "social": {
+      "title": "Réseaux sociaux"
+    },
+    "wifi": {
+      "title": "Informations de connexion Wi-Fi",
+      "description": "Scannez le QR code pour vous connecter au Wi-Fi",
+      "ssid": "SSID",
+      "password": "Mot de passe"
+    },
+    "review": {
+      "title": "Évaluez-nous",
+      "rateExperience": "Évaluez votre expérience",
+      "service": "Service",
+      "taste": "Goût",
+      "cleanliness": "Propreté",
+      "comments": "Vos commentaires",
+      "commentsPlaceholder": "Partagez votre expérience avec nous...",
+      "submitting": "Envoi en cours...",
+      "submitError": "Impossible d'envoyer votre avis. Veuillez réessayer.",
+      "privacyNotice": "Les données envoyées sont traitées selon notre",
+      "privacyPolicy": "Politique de confidentialité",
+      "thankYou": "Merci !",
+      "thankYouMessage": "Votre avis est très précieux pour nous. Merci pour votre évaluation !",
+      "customerInfoNote": "Vous pouvez, si vous le souhaitez, partager vos coordonnées. Cela nous aide à mieux vous servir !",
+      "customerName": "Votre nom",
+      "customerNamePlaceholder": "Entrez votre nom",
+      "customerEmail": "Votre e-mail",
+      "customerEmailPlaceholder": "exemple@email.com",
+      "optional": "Facultatif"
+    }
+  }
+  

@@ -1,0 +1,106 @@
+{
+    "common": {
+      "loading": "加载中...",
+      "error": "错误",
+      "success": "成功",
+      "cancel": "取消",
+      "close": "关闭",
+      "closed": "已关闭",
+      "save": "保存",
+      "submit": "提交",
+      "clear": "清除",
+      "all": "全部",
+      "search": "搜索",
+      "filter": "筛选",
+      "results": "结果",
+      "privacyPolicy": "隐私政策"
+    },
+    "menu": {
+      "loading": "正在加载菜单...",
+      "loadingDescription": "请稍候",
+      "loadError": "加载菜单失败",
+      "tryAgain": "重试",
+      "searchPlaceholder": "搜索食物...",
+      "searchResults": "搜索结果：",
+      "noResults": "未找到结果",
+      "noResultsDescription": "尝试不同的关键词",
+      "categories": "分类",
+      "features": "特色",
+      "description": "描述",
+      "ingredients": "配料",
+      "allergens": "过敏原警告",
+      "origin": "产地",
+      "additives": "添加剂",
+      "nutritionFacts": "营养成分",
+      "portion": "份量：",
+      "spiceLevel": "辣度",
+      "weight": "g",
+      "minutes": "分钟"
+    },
+    "filters": {
+      "title": "筛选",
+      "tags": "标签",
+      "spiceLevel": "辣度",
+      "clearAll": "清除所有筛选"
+    },
+    "tags": {
+      "popular": "热门",
+      "chef_special": "主厨推荐",
+      "vegetarian": "素食",
+      "vegan": "纯素",
+      "organic": "有机",
+      "spicy": "辣",
+      "new_product": "新品",
+      "gluten_free": "无麸质",
+      "lactose_free": "无乳糖",
+      "seasonal": "季节性",
+      "halal": "清真",
+      "kosher": "犹太洁食",
+      "low_calorie": "低热量",
+      "low_sodium": "低钠",
+      "low_sugar": "低糖",
+      "out_of_stock": "缺货"
+    },
+    "restaurant": {
+      "open": "营业中",
+      "wifi": "Wi-Fi",
+      "organicIngredients": "有机食材",
+      "freshlyPrepared": "现做",
+      "traditionalFlavors": "传统风味",
+      "allRightsReserved": "由 <a href='https://happybites.io' target='_blank' class='text-primary'>Happybites</a> 创建。"
+    },
+    "language": {
+      "select": "选择语言"
+    },
+    "social": {
+      "title": "社交媒体"
+    },
+    "wifi": {
+      "title": "Wi-Fi 连接信息",
+      "description": "扫描二维码连接 Wi-Fi",
+      "ssid": "SSID",
+      "password": "密码"
+    },
+    "review": {
+      "title": "评价我们",
+      "rateExperience": "评价您的体验",
+      "service": "服务",
+      "taste": "味道",
+      "cleanliness": "清洁度",
+      "comments": "您的评论",
+      "commentsPlaceholder": "与我们分享您的体验...",
+      "submitting": "提交中...",
+      "submitError": "无法提交评价，请重试。",
+      "privacyNotice": "提交的数据将根据我们的",
+      "privacyPolicy": "隐私政策",
+      "thankYou": "谢谢！",
+      "thankYouMessage": "您的反馈对我们非常重要。感谢您的评价！",
+      "customerInfoNote": "您可以选择提供联系方式，这有助于我们为您提供更好的服务！",
+      "customerName": "您的姓名",
+      "customerNamePlaceholder": "请输入您的姓名",
+      "customerEmail": "您的电子邮件",
+      "customerEmailPlaceholder": "example@email.com",
+      "optional": "可选"
+    }
+  }
+  

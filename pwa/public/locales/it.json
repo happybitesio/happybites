@@ -1,0 +1,106 @@
+{
+    "common": {
+      "loading": "Caricamento...",
+      "error": "Errore",
+      "success": "Successo",
+      "cancel": "Annulla",
+      "close": "Chiudi",
+      "closed": "Chiuso",
+      "save": "Salva",
+      "submit": "Invia",
+      "clear": "Cancella",
+      "all": "Tutti",
+      "search": "Cerca",
+      "filter": "Filtra",
+      "results": "risultati",
+      "privacyPolicy": "Informativa sulla privacy"
+    },
+    "menu": {
+      "loading": "Caricamento del menu...",
+      "loadingDescription": "Attendere prego",
+      "loadError": "Impossibile caricare il menu",
+      "tryAgain": "Riprova",
+      "searchPlaceholder": "Cerca piatto...",
+      "searchResults": "Risultati di ricerca per",
+      "noResults": "Nessun risultato trovato",
+      "noResultsDescription": "Prova con altre parole chiave",
+      "categories": "Categorie",
+      "features": "Caratteristiche",
+      "description": "Descrizione",
+      "ingredients": "Ingredienti",
+      "allergens": "Avviso allergeni",
+      "origin": "Origine",
+      "additives": "Additivi",
+      "nutritionFacts": "Valori nutrizionali",
+      "portion": "Porzione: ",
+      "spiceLevel": "Livello di piccantezza",
+      "weight": "g",
+      "minutes": "min"
+    },
+    "filters": {
+      "title": "Filtri",
+      "tags": "Etichette",
+      "spiceLevel": "Livello di piccantezza",
+      "clearAll": "Cancella tutti i filtri"
+    },
+    "tags": {
+      "popular": "Popolare",
+      "chef_special": "Specialità dello chef",
+      "vegetarian": "Vegetariano",
+      "vegan": "Vegano",
+      "organic": "Biologico",
+      "spicy": "Piccante",
+      "new_product": "Nuovo prodotto",
+      "gluten_free": "Senza glutine",
+      "lactose_free": "Senza lattosio",
+      "seasonal": "Stagionale",
+      "halal": "Halal",
+      "kosher": "Kosher",
+      "low_calorie": "A basso contenuto calorico",
+      "low_sodium": "A basso contenuto di sodio",
+      "low_sugar": "A basso contenuto di zucchero",
+      "out_of_stock": "Esaurito"
+    },
+    "restaurant": {
+      "open": "Aperto",
+      "wifi": "Wi-Fi",
+      "organicIngredients": "Ingredienti biologici",
+      "freshlyPrepared": "Preparato fresco",
+      "traditionalFlavors": "Sapori tradizionali",
+      "allRightsReserved": "Creato da <a href='https://happybites.io' target='_blank' class='text-primary'>Happybites</a>."
+    },
+    "language": {
+      "select": "Seleziona lingua"
+    },
+    "social": {
+      "title": "Social Media"
+    },
+    "wifi": {
+      "title": "Informazioni di connessione Wi-Fi",
+      "description": "Scansiona il codice QR per connetterti al Wi-Fi",
+      "ssid": "SSID",
+      "password": "Password"
+    },
+    "review": {
+      "title": "Valutaci",
+      "rateExperience": "Valuta la tua esperienza",
+      "service": "Servizio",
+      "taste": "Gusto",
+      "cleanliness": "Pulizia",
+      "comments": "I tuoi commenti",
+      "commentsPlaceholder": "Condividi la tua esperienza con noi...",
+      "submitting": "Invio in corso...",
+      "submitError": "Impossibile inviare la recensione. Riprova.",
+      "privacyNotice": "I dati inviati sono trattati secondo la nostra",
+      "privacyPolicy": "Informativa sulla privacy",
+      "thankYou": "Grazie!",
+      "thankYouMessage": "Il tuo feedback è molto prezioso per noi. Grazie per la tua recensione!",
+      "customerInfoNote": "Puoi opzionalmente condividere i tuoi dati di contatto. Questo ci aiuta a fornirti un servizio migliore!",
+      "customerName": "Il tuo nome",
+      "customerNamePlaceholder": "Inserisci il tuo nome",
+      "customerEmail": "La tua email",
+      "customerEmailPlaceholder": "esempio@email.com",
+      "optional": "Opzionale"
+    }
+  }
+  

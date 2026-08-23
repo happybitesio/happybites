@@ -1,0 +1,30 @@
+# WordPress.org / release zip exclusions
+.git
+.gitignore
+.distignore
+.github
+
+# Source apps (built assets ship in public/)
+admin-app/
+pwa/
+
+# Dev tooling & local scripts
+scripts/
+tools/
+*.log
+.DS_Store
+Thumbs.db
+.env
+.env.*
+
+# Dependencies (never ship)
+node_modules/
+admin-app/node_modules/
+pwa/node_modules/
+
+# Dev docs (readme.txt is included)
+*.md
+!readme.txt
+
+# WordPress.org assets are uploaded separately to SVN
+assets/

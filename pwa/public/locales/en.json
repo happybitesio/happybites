@@ -1,0 +1,113 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "close": "Close",
+    "closed": "Closed",
+    "save": "Save",
+    "submit": "Submit",
+    "clear": "Clear",
+    "all": "All",
+    "search": "Search",
+    "filter": "Filter",
+    "results": "results",
+    "privacyPolicy": "Privacy Policy"
+  },
+  "menu": {
+    "loading": "Loading Menu...",
+    "loadingDescription": "Please wait",
+    "loadError": "Failed to Load Menu",
+    "tryAgain": "Try Again",
+    "searchPlaceholder": "Search food...",
+    "searchResults": "Search results for",
+    "noResults": "No results found",
+    "noResultsDescription": "Try different keywords",
+    "categories": "Categories",
+    "features": "Features",
+    "description": "Description",
+    "ingredients": "Ingredients",
+    "allergens": "Allergen Warning",
+    "origin": "Origin",
+    "additives": "Additives",
+    "nutritionFacts": "Nutrition Facts",
+    "portion": "Portion: ",
+    "spiceLevel": "Spice Level",
+    "weight": "g",
+    "minutes": "min",
+    "viewList": "List view",
+    "viewBento": "Bento view"
+  },
+  "filters": {
+    "title": "Filters",
+    "tags": "Tags",
+    "spiceLevel": "Spice Level",
+    "clearAll": "Clear All Filters"
+  },
+  "tags": {
+    "popular": "Popular",
+    "chef_special": "Chef's Special",
+    "vegetarian": "Vegetarian",
+    "vegan": "Vegan",
+    "organic": "Organic",
+    "spicy": "Spicy",
+    "new_product": "New Product",
+    "gluten_free": "Gluten Free",
+    "lactose_free": "Lactose Free",
+    "seasonal": "Seasonal",
+    "halal": "Halal",
+    "kosher": "Kosher",
+    "low_calorie": "Low Calorie",
+    "low_sodium": "Low Sodium",
+    "low_sugar": "Low Sugar",
+    "out_of_stock": "Out of Stock"
+  },
+  "restaurant": {
+    "open": "Open",
+    "wifi": "WiFi",
+    "organicIngredients": "Organic Ingredients",
+    "freshlyPrepared": "Freshly Prepared",
+    "traditionalFlavors": "Traditional Flavors",
+    "allRightsReserved": "Created by <a href='https://happybites.io' target='_blank' class='text-primary'>Happybites</a>."
+  },
+  "language": {
+    "select": "Select Language"
+  },
+  "social": {
+    "title": "Social Media"
+  },
+  "wifi": {
+    "title": "WiFi Connection Information",
+    "description": "Scan QR code to connect to WiFi",
+    "ssid": "SSID",
+    "password": "Password",
+    "copy": "Copy",
+    "copied": "Copied"
+  },
+  "information": {
+    "title": "Additional Info",
+    "shortLabel": "Info"
+  },
+  "review": {
+    "title": "Rate Us",
+    "rateExperience": "Rate Your Experience",
+    "service": "Service",
+    "taste": "Taste",
+    "cleanliness": "Cleanliness",
+    "comments": "Your Comments",
+    "commentsPlaceholder": "Share your experience with us...",
+    "submitting": "Submitting...",
+    "submitError": "Could not submit your review. Please try again.",
+    "privacyNotice": "Submitted data is processed according to our",
+    "privacyPolicy": "Privacy Policy",
+    "thankYou": "Thank You!",
+    "thankYouMessage": "Your feedback is very valuable to us. Thank you for your review!",
+    "customerInfoNote": "You can optionally share your contact information. This helps us provide you with better service!",
+    "customerName": "Your Name",
+    "customerNamePlaceholder": "Enter your name",
+    "customerEmail": "Your Email",
+    "customerEmailPlaceholder": "example@email.com",
+    "optional": "Optional"
+  }
+}
