@@ -81,8 +81,15 @@ final class CategoryAdminEndpoint
     {
         $term_id = (int) $request->get_param('id');
         $params = $request->get_json_params();
+        if (!is_array($params)) {
+            $params = [];
+        }
+
         $name = sanitize_text_field($params['name'] ?? '');
         $description = sanitize_textarea_field($params['description'] ?? '');
+        $parent_id = array_key_exists('parent_id', $params)
+            ? (int) $params['parent_id']
+            : null;
 
         if ($name === '') {
             return new WP_REST_Response([
@@ -99,11 +106,43 @@ final class CategoryAdminEndpoint
             ], 404);
         }
 
-        $result = wp_update_term($term_id, Taxonomy::TAXONOMY, [
+        if ($parent_id !== null) {
+            if ($parent_id === $term_id) {
+                return new WP_REST_Response([
+                    'success' => false,
+                    'message' => __('A category cannot be its own parent.', 'happybites'),
+                ], 400);
+            }
+
+            if ($parent_id > 0) {
+                $parent_term = get_term($parent_id, Taxonomy::TAXONOMY);
+                if (!$parent_term || is_wp_error($parent_term)) {
+                    return new WP_REST_Response([
+                        'success' => false,
+                        'message' => __('Parent category not found.', 'happybites'),
+                    ], 404);
+                }
+
+                if ($this->is_descendant_category($parent_id, $term_id)) {
+                    return new WP_REST_Response([
+                        'success' => false,
+                        'message' => __('A category cannot be moved under its own descendant.', 'happybites'),
+                    ], 400);
+                }
+            }
+        }
+
+        $update_args = [
             'name' => $name,
             'description' => $description,
             'slug' => sanitize_title($name),
-        ]);
+        ];
+
+        if ($parent_id !== null) {
+            $update_args['parent'] = max(0, $parent_id);
+        }
+
+        $result = wp_update_term($term_id, Taxonomy::TAXONOMY, $update_args);
 
         if (is_wp_error($result)) {
             return new WP_REST_Response([
@@ -114,10 +153,14 @@ final class CategoryAdminEndpoint
 
         $this->sync_default_language_meta($term_id, $name, $description);
         $order = (int) get_term_meta($term_id, '_menu_order', true);
+        $updated_term = get_term($term_id, Taxonomy::TAXONOMY);
+        $resolved_parent = ($updated_term && !is_wp_error($updated_term))
+            ? (int) $updated_term->parent
+            : (int) $term->parent;
 
         return new WP_REST_Response([
             'success' => true,
-            'data' => $this->map_category($term_id, (int) $term->parent, $name, $description, $order),
+            'data' => $this->map_category($term_id, $resolved_parent, $name, $description, $order),
         ], 200);
     }
 
@@ -164,6 +207,26 @@ final class CategoryAdminEndpoint
         }
 
         return (int) get_term_meta($terms[0]->term_id, '_menu_order', true) + 1;
+    }
+
+    private function is_descendant_category(int $candidate_parent_id, int $term_id): bool
+    {
+        $current_id = $candidate_parent_id;
+
+        while ($current_id > 0) {
+            if ($current_id === $term_id) {
+                return true;
+            }
+
+            $ancestor = get_term($current_id, Taxonomy::TAXONOMY);
+            if (!$ancestor || is_wp_error($ancestor)) {
+                break;
+            }
+
+            $current_id = (int) $ancestor->parent;
+        }
+
+        return false;
     }
 
     private function sync_default_language_meta(int $term_id, string $name, string $description): void

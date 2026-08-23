@@ -202,33 +202,13 @@ final class MenuManagementService
             }
 
             delete_post_meta($product_id, '_menu_category');
-            $saved_count++;
-        }
-
-        $submitted_product_ids = array_values(array_unique(array_map('intval', $submitted_product_ids)));
-
-        $existing_with_cat_ids = get_posts([
-            'post_type' => PostTypes::POST_TYPE,
-            'post_status' => 'any',
-            'posts_per_page' => -1,
-            'fields' => 'ids',
-            'no_found_rows' => true,
-            'meta_query' => [[
-                'key' => '_menu_category',
-                'compare' => 'EXISTS',
-            ]],
-        ]);
-
-        $to_clear = array_diff($existing_with_cat_ids, $submitted_product_ids);
-
-        foreach ($to_clear as $product_id) {
-            delete_post_meta((int) $product_id, '_menu_category');
+            wp_set_object_terms($product_id, [], Taxonomy::TAXONOMY, false);
             $saved_count++;
         }
 
         return [
             'saved_count' => $saved_count,
-            'cleared' => array_values(array_map('intval', $to_clear)),
+            'cleared' => [],
         ];
     }
 
