@@ -1,5 +1,5 @@
 === HappyBites – QR Code Food Menu ===
-Contributors: happybitesteam
+Contributors: happybites
 Tags: restaurant, menu, qr code, food menu, digital menu
 Requires at least: 5.8
 Tested up to: 6.8
