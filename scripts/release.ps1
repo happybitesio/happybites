@@ -85,6 +85,12 @@ function Test-ShouldExclude {
         if ($normalized -eq $rule) {
             return $true
         }
+
+        if (-not ($rule -like "*.*")) {
+            if ($normalized.StartsWith("$rule/")) {
+                return $true
+            }
+        }
     }
 
     foreach ($rule in $Rules) {
@@ -99,6 +105,104 @@ function Test-ShouldExclude {
     }
 
     return $false
+}
+
+function New-PluginZip {
+    param(
+        [string]$SourceDir,
+        [string]$PluginSlug,
+        [string]$ZipPath
+    )
+
+    Add-Type -AssemblyName System.IO.Compression
+    Add-Type -AssemblyName System.IO.Compression.FileSystem
+
+    if (Test-Path $ZipPath) {
+        Remove-Item $ZipPath -Force
+    }
+
+    $zip = [System.IO.Compression.ZipFile]::Open(
+        $ZipPath,
+        [System.IO.Compression.ZipArchiveMode]::Create
+    )
+
+    try {
+        Get-ChildItem -Path $SourceDir -Recurse -File | ForEach-Object {
+            $relative = $_.FullName.Substring($SourceDir.Length).TrimStart("\", "/")
+            $entryName = "$PluginSlug/" + ($relative -replace "\\", "/")
+
+            [void][System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile(
+                $zip,
+                $_.FullName,
+                $entryName,
+                [System.IO.Compression.CompressionLevel]::Optimal
+            )
+        }
+    }
+    finally {
+        $zip.Dispose()
+    }
+}
+
+function Test-PluginZip {
+    param(
+        [string]$ZipPath,
+        [string]$PluginSlug
+    )
+
+    Add-Type -AssemblyName System.IO.Compression.FileSystem
+
+    $zip = [System.IO.Compression.ZipFile]::OpenRead($ZipPath)
+
+    try {
+        $entries = @(
+            $zip.Entries | ForEach-Object {
+                ($_.FullName -replace "\\", "/").TrimEnd("/")
+            }
+        )
+
+        $mainFile = "$PluginSlug/happybites.php"
+        if ($entries -notcontains $mainFile) {
+            throw "ZIP is missing required entry: $mainFile"
+        }
+
+        $bootstrapFiles = @(
+            $entries | Where-Object {
+                $_ -eq "$PluginSlug/happybites.php" -or $_ -like "*/happybites.php"
+            }
+        )
+
+        if ($bootstrapFiles.Count -ne 1) {
+            throw "ZIP must contain exactly one happybites.php, found $($bootstrapFiles.Count): $($bootstrapFiles -join ', ')"
+        }
+
+        $nestedPlugin = @(
+            $entries | Where-Object { $_ -like "$PluginSlug/$PluginSlug/*" }
+        )
+
+        if ($nestedPlugin.Count -gt 0) {
+            throw "ZIP contains nested plugin folder ($PluginSlug/$PluginSlug/)."
+        }
+
+        $gitEntries = @(
+            $entries | Where-Object { $_ -like "$PluginSlug/.git*" -or $_ -like ".git/*" }
+        )
+
+        if ($gitEntries.Count -gt 0) {
+            throw "ZIP must not include .git metadata."
+        }
+
+        $distEntries = @(
+            $entries | Where-Object { $_ -like "$PluginSlug/dist/*" }
+        )
+
+        if ($distEntries.Count -gt 0) {
+            throw "ZIP must not include dist/ build artifacts."
+        }
+    }
+    finally {
+        $zip.Dispose()
+    }
 }
 
 function Invoke-BuildStep {
@@ -169,9 +273,13 @@ if (Test-Path $zipPath) {
 }
 
 Write-Host "==> Creating ZIP..." -ForegroundColor Cyan
-Compress-Archive -Path $stagingDir -DestinationPath $zipPath -CompressionLevel Optimal
+New-PluginZip -SourceDir $stagingDir -PluginSlug "happybites" -ZipPath $zipPath
+
+Write-Host "==> Validating ZIP..." -ForegroundColor Cyan
+Test-PluginZip -ZipPath $zipPath -PluginSlug "happybites"
 
 Remove-Item $stagingRoot -Recurse -Force
 
 $sizeMb = [Math]::Round((Get-Item $zipPath).Length / 1MB, 2)
 Write-Host "Done: $zipPath ($sizeMb MB)" -ForegroundColor Green
+Write-Host "Install: upload this ZIP on a site without an existing wp-content/plugins/happybites folder, or delete the old folder first." -ForegroundColor Yellow

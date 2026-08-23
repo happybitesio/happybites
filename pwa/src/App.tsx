@@ -65,6 +65,11 @@ export default function App() {
     }
 
     setIsDarkMode(menuData.data.settings.themeMode === "dark")
+
+    const pageTitle = menuData.data.settings.title?.trim()
+    if (pageTitle) {
+      document.title = pageTitle
+    }
   }, [menuData])
 
   useEffect(() => {

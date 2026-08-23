@@ -1,8 +1,9 @@
 # WordPress.org / release zip exclusions
-.git
+.git/
 .gitignore
 .distignore
-.github
+.github/
+dist/
 
 # Source apps (built assets ship in public/)
 admin-app/

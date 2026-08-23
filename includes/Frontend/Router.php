@@ -27,6 +27,7 @@ final class Router
     {
         $this->loader->add_action('init', $this, 'add_rewrite_rules');
         $this->loader->add_filter('query_vars', $this, 'add_query_vars');
+        $this->loader->add_filter('redirect_canonical', $this, 'disable_canonical_redirect', 10, 2);
         $this->loader->add_action('template_redirect', $this, 'serve_pwa');
     }
 
@@ -71,6 +72,36 @@ final class Router
         return $vars;
     }
 
+    /**
+     * @param string|false $redirect_url
+     * @param string|false $requested_url
+     * @return string|false
+     */
+    public function disable_canonical_redirect($redirect_url, $requested_url)
+    {
+        if (get_query_var('hb_next_app')) {
+            return false;
+        }
+
+        $slug = preg_quote(Options::menu_slug(), '#');
+        $paths = [
+            wp_parse_url((string) $requested_url, PHP_URL_PATH),
+            wp_parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH),
+        ];
+
+        foreach ($paths as $path) {
+            if (!is_string($path) || $path === '') {
+                continue;
+            }
+
+            if (preg_match('#^/' . $slug . '/?$#', $path) === 1) {
+                return false;
+            }
+        }
+
+        return $redirect_url;
+    }
+
     public function serve_pwa(): void
     {
         if (!get_query_var('hb_next_app')) {
@@ -88,6 +119,15 @@ final class Router
         $req = ltrim((string) get_query_var('hb_next_path', ''), '/');
 
         if ($req === '') {
+            $menu_slug = Options::menu_slug();
+            $request_path = wp_parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
+            $bare_path = '/' . $menu_slug;
+
+            if (is_string($request_path) && $request_path === $bare_path) {
+                wp_safe_redirect(home_url(trailingslashit($bare_path)), 301);
+                exit;
+            }
+
             $req = 'index.html';
         }
 
@@ -139,29 +179,54 @@ final class Router
         return HAPPYBITES_PLUGIN_PATH . 'public/pwa';
     }
 
+    private function resolve_page_title(): string
+    {
+        $restaurant_info = get_option(Options::RESTAURANT_INFO, []);
+        $title = isset($restaurant_info['title']) ? trim((string) $restaurant_info['title']) : '';
+
+        if ($title !== '') {
+            return $title;
+        }
+
+        $site_name = trim((string) get_bloginfo('name'));
+
+        return $site_name !== '' ? $site_name : __('Menu', 'happybites');
+    }
+
     private function inject_runtime_config(string $html): string
     {
         $restaurant_info = get_option(Options::RESTAURANT_INFO, []);
         $logo_url = isset($restaurant_info['logo_url']) ? (string) $restaurant_info['logo_url'] : '';
+        $menu_slug = Options::menu_slug();
+        $base_path = '/' . $menu_slug . '/';
+        $page_title = esc_html($this->resolve_page_title());
+
+        $html = preg_replace('/<title>.*?<\/title>/i', '<title>' . $page_title . '</title>', $html, 1) ?? $html;
 
         $config = [
             'menuUrl' => rest_url('happybites/v1/menu'),
             'reviewUrl' => rest_url('happybites/v1/review'),
             'restUrl' => rest_url(),
             'siteUrl' => home_url('/'),
-            'basePath' => '/' . Options::menu_slug(),
+            'basePath' => '/' . $menu_slug,
         ];
 
         if ($logo_url !== '') {
             $config['logo'] = $logo_url;
         }
 
+        $base_tag = '<base href="' . esc_url(home_url($base_path)) . '">';
         $script = '<script>window.HAPPYBITES_CONFIG=' . wp_json_encode($config) . ';</script>';
+        $injection = $base_tag . $script;
 
-        if (strpos($html, '</head>') !== false) {
-            return str_replace('</head>', $script . '</head>', $html);
+        if (strpos($html, '<head>') !== false) {
+            return preg_replace('/<head>/', '<head>' . $injection, $html, 1) ?? ($injection . $html);
         }
 
-        return $script . $html;
+        if (strpos($html, '</head>') !== false) {
+            return str_replace('</head>', $injection . '</head>', $html);
+        }
+
+        return $injection . $html;
     }
 }
