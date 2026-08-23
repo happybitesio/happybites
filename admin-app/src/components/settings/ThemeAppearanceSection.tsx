@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { SettingsData, ThemePalette } from '../../api/client';
+import type { SettingsData, ThemeAppearance, ThemePalette } from '../../api/client';
 import { generateThemeFromLogoUrl } from '../../utils/logoThemeExtractor';
 import { Alert } from '../ui/Alert';
 import { FormField } from '../ui/FormField';
@@ -91,6 +91,48 @@ export function ThemeAppearanceSection({ settings, onChange }: Props) {
         accent_color: palettes.light.accent,
         light: { ...palettes.light },
         dark: { ...palettes.dark },
+      },
+    }));
+  };
+
+  const appearance: ThemeAppearance = {
+    theme_color: {
+      light: settings.colors.appearance?.theme_color?.light || settings.colors.light?.background || '#ffffff',
+      dark: settings.colors.appearance?.theme_color?.dark || settings.colors.dark?.background || '#121212',
+    },
+    header_overlay: {
+      light: settings.colors.appearance?.header_overlay?.light ?? 65,
+      dark: settings.colors.appearance?.header_overlay?.dark ?? 70,
+    },
+  };
+
+  const updateAppearance = (
+    mode: 'light' | 'dark',
+    key: 'theme_color' | 'header_overlay',
+    value: string | number,
+  ) => {
+    onChange((current) => ({
+      ...current,
+      colors: {
+        ...current.colors,
+        appearance: {
+          theme_color: {
+            light:
+              current.colors.appearance?.theme_color?.light ||
+              current.colors.light?.background ||
+              '#ffffff',
+            dark:
+              current.colors.appearance?.theme_color?.dark ||
+              current.colors.dark?.background ||
+              '#121212',
+            ...(key === 'theme_color' ? { [mode]: value as string } : {}),
+          },
+          header_overlay: {
+            light: current.colors.appearance?.header_overlay?.light ?? 65,
+            dark: current.colors.appearance?.header_overlay?.dark ?? 70,
+            ...(key === 'header_overlay' ? { [mode]: value as number } : {}),
+          },
+        },
       },
     }));
   };
@@ -193,6 +235,49 @@ export function ThemeAppearanceSection({ settings, onChange }: Props) {
             <option value="light">Açık Tema</option>
             <option value="dark">Koyu Tema</option>
           </select>
+        </FormField>
+      </SectionCard>
+
+      <SectionCard
+        title="Tarayıcı ve Kapak"
+        description="Safari/Chrome üst çubuğu rengi ve kapak fotoğrafı üzerindeki karartma yoğunluğu."
+      >
+        <div className="hb-theme-editor-toolbar">
+          <Tabs
+            variant="underline"
+            tabs={[...MODE_TABS]}
+            active={colorMode}
+            onChange={(id) => onChange((c) => ({ ...c, theme_editor_mode: id as 'light' | 'dark' }))}
+          />
+        </div>
+
+        <FormField
+          label="Tarayıcı tema rengi (theme-color)"
+          hint="Safari ve Chrome üst/alt bant rengi. Açık ve koyu mod için ayrı ayarlayın."
+        >
+          <div className="hb-color-row">
+            <input
+              type="color"
+              value={appearance.theme_color[colorMode]}
+              onChange={(e) => updateAppearance(colorMode, 'theme_color', e.target.value)}
+            />
+            <span className="hb-color-value">{appearance.theme_color[colorMode]}</span>
+          </div>
+        </FormField>
+
+        <FormField
+          label="Kapak overlay koyuluğu"
+          hint={`Kapak fotoğrafı üzerindeki karartma: %${appearance.header_overlay[colorMode]}`}
+        >
+          <input
+            type="range"
+            className="hb-input"
+            min={0}
+            max={100}
+            step={5}
+            value={appearance.header_overlay[colorMode]}
+            onChange={(e) => updateAppearance(colorMode, 'header_overlay', Number(e.target.value))}
+          />
         </FormField>
       </SectionCard>
 

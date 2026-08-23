@@ -236,6 +236,17 @@ export interface ThemePalette {
   header: string;
 }
 
+export interface ThemeAppearance {
+  theme_color: {
+    light: string;
+    dark: string;
+  };
+  header_overlay: {
+    light: number;
+    dark: number;
+  };
+}
+
 export interface ThemePresetMeta {
   id: string;
   name: string;
@@ -254,6 +265,7 @@ export interface SettingsData {
     accent_color?: string;
     light?: ThemePalette;
     dark?: ThemePalette;
+    appearance?: ThemeAppearance;
   };
   theme_mode: { mode?: string };
   theme_presets?: ThemePresetMeta[];

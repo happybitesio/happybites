@@ -8,6 +8,7 @@
 namespace HappyBites\Frontend;
 
 use HappyBites\Data\Options;
+use HappyBites\Data\ThemeSettings;
 use HappyBites\Loader;
 
 if (!defined('ABSPATH')) {
@@ -202,6 +203,7 @@ final class Router
         $page_title = esc_html($this->resolve_page_title());
 
         $html = preg_replace('/<title>.*?<\/title>/i', '<title>' . $page_title . '</title>', $html, 1) ?? $html;
+        $html = preg_replace('/<meta[^>]+name=["\']theme-color["\'][^>]*>/i', '', $html) ?? $html;
 
         $config = [
             'menuUrl' => rest_url('happybites/v1/menu'),
@@ -216,8 +218,9 @@ final class Router
         }
 
         $base_tag = '<base href="' . esc_url(home_url($base_path)) . '">';
+        $theme_meta = $this->build_theme_color_meta();
         $script = '<script>window.HAPPYBITES_CONFIG=' . wp_json_encode($config) . ';</script>';
-        $injection = $base_tag . $script;
+        $injection = $base_tag . $theme_meta . $script;
 
         if (strpos($html, '<head>') !== false) {
             return preg_replace('/<head>/', '<head>' . $injection, $html, 1) ?? ($injection . $html);
@@ -228,5 +231,19 @@ final class Router
         }
 
         return $injection . $html;
+    }
+
+    private function build_theme_color_meta(): string
+    {
+        $appearance = ThemeSettings::appearance_for_api(get_option(Options::COLORS, []));
+        $light = esc_attr((string) ($appearance['theme_color']['light'] ?? '#ffffff'));
+        $dark = esc_attr((string) ($appearance['theme_color']['dark'] ?? '#121212'));
+        $theme_mode = get_option(Options::THEME_MODE, ['mode' => 'light']);
+        $active = (is_array($theme_mode) && ($theme_mode['mode'] ?? '') === 'dark') ? $dark : $light;
+
+        return '<meta name="theme-color" content="' . $light . '" media="(prefers-color-scheme: light)">'
+            . '<meta name="theme-color" content="' . $dark . '" media="(prefers-color-scheme: dark)">'
+            . '<meta name="theme-color" content="' . $active . '" id="hb-theme-color-active">'
+            . '<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">';
     }
 }

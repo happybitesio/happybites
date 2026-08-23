@@ -209,6 +209,7 @@ final class MenuService
                         'secondary' => $active_palette['accent'],
                     ],
                     'theme' => $theme,
+                    'appearance' => ThemeSettings::appearance_for_api(is_array($colors) ? $colors : []),
                     'workingHours' => $working_hours_data,
                     'socialMedia' => [
                         'facebook' => isset($social_media['facebook']) ? $social_media['facebook'] : '',

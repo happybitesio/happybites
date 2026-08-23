@@ -18,6 +18,7 @@ import { useViewMode } from "./hooks/useViewMode"
 import { persistMenuLanguage, resolveMenuLanguage, useInitialMenuLanguage } from "./hooks/useMenuLanguage"
 import { getAvailableTags, getFilteredProducts, searchProducts, findProductById, findCategoryBySlug, readMenuDeepLink, writeMenuDeepLink } from "./utils/menuHelpers"
 import { applyThemeVariables, getPalette, withResolvedColors } from "./utils/theme"
+import { syncBrowserChrome } from "./utils/browserChrome"
 import { Product, Category } from "./types/menu"
 
 export default function App() {
@@ -75,7 +76,8 @@ export default function App() {
   useEffect(() => {
     applyThemeVariables(palette)
     document.documentElement.classList.toggle("dark", isDarkMode)
-  }, [palette, isDarkMode])
+    syncBrowserChrome(menuData?.data?.settings?.appearance, isDarkMode, palette.background)
+  }, [palette, isDarkMode, menuData?.data?.settings?.appearance])
 
   const openProduct = (product: Product) => {
     setSelectedProduct(product)

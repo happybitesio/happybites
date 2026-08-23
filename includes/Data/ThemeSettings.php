@@ -13,6 +13,11 @@ if (!defined('ABSPATH')) {
 
 final class ThemeSettings
 {
+    public const DEFAULT_HEADER_OVERLAY = [
+        'light' => 65,
+        'dark' => 70,
+    ];
+
     /**
      * @param array<string, mixed> $stored
      * @return array<string, mixed>
@@ -66,6 +71,7 @@ final class ThemeSettings
             'accent_color' => $light['accent'],
             'light' => $light,
             'dark' => $dark,
+            'appearance' => self::normalize_appearance($stored['appearance'] ?? [], $light, $dark),
         ];
     }
 
@@ -81,7 +87,19 @@ final class ThemeSettings
             'preset' => $normalized['preset'],
             'light' => $normalized['light'],
             'dark' => $normalized['dark'],
+            'appearance' => $normalized['appearance'],
         ];
+    }
+
+    /**
+     * @param array<string, mixed> $stored
+     * @return array<string, mixed>
+     */
+    public static function appearance_for_api(array $stored): array
+    {
+        $normalized = self::normalize($stored);
+
+        return $normalized['appearance'];
     }
 
     /**
@@ -121,13 +139,67 @@ final class ThemeSettings
             }
         }
 
+        $appearance = self::DEFAULT_HEADER_OVERLAY;
+        if (!empty($data['appearance']) && is_array($data['appearance'])) {
+            $appearance = self::sanitize_appearance_input($data['appearance'], $light, $dark);
+        } else {
+            $appearance = self::normalize_appearance([], $light, $dark);
+        }
+
         return [
             'preset' => $preset_id,
             'active_color' => $light['primary'],
             'accent_color' => $light['accent'],
             'light' => $light,
             'dark' => $dark,
+            'appearance' => $appearance,
         ];
+    }
+
+    /**
+     * @param array<string, mixed> $appearance
+     * @param array<string, string> $light
+     * @param array<string, string> $dark
+     * @return array<string, mixed>
+     */
+    private static function normalize_appearance(array $appearance, array $light, array $dark): array
+    {
+        $theme_color = is_array($appearance['theme_color'] ?? null) ? $appearance['theme_color'] : [];
+        $header_overlay = is_array($appearance['header_overlay'] ?? null) ? $appearance['header_overlay'] : [];
+
+        $light_color = sanitize_hex_color((string) ($theme_color['light'] ?? ''));
+        $dark_color = sanitize_hex_color((string) ($theme_color['dark'] ?? ''));
+
+        return [
+            'theme_color' => [
+                'light' => $light_color ?: ($light['background'] ?? '#ffffff'),
+                'dark' => $dark_color ?: ($dark['background'] ?? '#121212'),
+            ],
+            'header_overlay' => [
+                'light' => self::sanitize_overlay($header_overlay['light'] ?? self::DEFAULT_HEADER_OVERLAY['light']),
+                'dark' => self::sanitize_overlay($header_overlay['dark'] ?? self::DEFAULT_HEADER_OVERLAY['dark']),
+            ],
+        ];
+    }
+
+    /**
+     * @param array<string, mixed> $appearance
+     * @param array<string, string> $light
+     * @param array<string, string> $dark
+     * @return array<string, mixed>
+     */
+    private static function sanitize_appearance_input(array $appearance, array $light, array $dark): array
+    {
+        return self::normalize_appearance($appearance, $light, $dark);
+    }
+
+    private static function sanitize_overlay(mixed $value): int
+    {
+        if (!is_numeric($value)) {
+            return self::DEFAULT_HEADER_OVERLAY['light'];
+        }
+
+        return max(0, min(100, (int) $value));
     }
 
     /**

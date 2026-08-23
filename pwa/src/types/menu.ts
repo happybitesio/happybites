@@ -83,6 +83,17 @@ export interface ThemeConfig {
   dark: ThemePalette
 }
 
+export interface ThemeAppearance {
+  theme_color: {
+    light: string
+    dark: string
+  }
+  header_overlay: {
+    light: number
+    dark: number
+  }
+}
+
 export interface RestaurantSettings {
   title: string
   description: string
@@ -95,6 +106,7 @@ export interface RestaurantSettings {
     secondary: string
   }
   theme?: ThemeConfig
+  appearance?: ThemeAppearance
   wifi: {
     ssid: string
     password: string

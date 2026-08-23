@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { RestaurantSettings } from "@/types/menu"
 import { useTranslation } from "@/hooks/useTranslation"
 import withBasePath from "@/utils/basePath"
+import { getHeaderOverlayOpacity } from "@/utils/browserChrome"
 
 interface Props {
   settings: RestaurantSettings
@@ -36,6 +37,7 @@ export function MenuHeader({
   const { t } = useTranslation(currentLanguage)
   const hasCover = Boolean(settings.header_background)
   const hasInfo = Boolean(settings.information?.trim())
+  const overlayOpacity = getHeaderOverlayOpacity(settings.appearance, isDarkMode) / 100
 
   return (
     <header className="menu-header relative overflow-hidden">
@@ -47,7 +49,14 @@ export function MenuHeader({
       ) : (
         <div className="menu-header__cover menu-header__cover--gradient absolute inset-0" />
       )}
-      <div className="menu-header__overlay absolute inset-0" />
+      <div
+        className="menu-header__overlay absolute inset-0"
+        style={{
+          ["--hb-overlay-top" as string]: overlayOpacity,
+          ["--hb-overlay-mid" as string]: overlayOpacity * 0.55,
+          ["--hb-overlay-bottom" as string]: overlayOpacity * 0.85,
+        }}
+      />
 
       <div className="relative z-10 px-4 pb-5 pt-[max(1rem,env(safe-area-inset-top))]">
         <div className="mb-5 flex items-center justify-between">
