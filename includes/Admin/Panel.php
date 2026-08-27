@@ -2,6 +2,7 @@
 namespace HappyBites\Admin;
 
 use HappyBites\Data\Taxonomy;
+use HappyBites\Data\ThemeSettings;
 use HappyBites\Loader;
 
 if (!defined('ABSPATH')) {
@@ -44,7 +45,7 @@ final class Panel
     {
         $this->loader->add_action('admin_menu', $this, 'add_admin_menu');
         $this->loader->add_action('admin_menu', $this, 'move_the_title', 999);
-        $this->loader->add_action('admin_head',  $this, 'submenu_divider_css'); // divider stili
+        $this->loader->add_action('admin_enqueue_scripts', $this, 'enqueue_admin_chrome');
 
         // Quick Edit'te taksonomi alanını gizle
 
@@ -64,10 +65,6 @@ final class Panel
 
         // Kategori listesinden slug/description sütunlarını kaldır
         $this->loader->add_filter('manage_edit-happybites_menu_category_columns', $this, 'remove_term_columns', 100);
-
-        // Kategori ekleme/düzenleme ekranında varsayılan "Kısaltma" (slug) ve "Açıklama" alanlarını gizle
-        $this->loader->add_action('admin_head-edit-tags.php', $this, 'hide_default_term_fields');
-        $this->loader->add_action('admin_head-term.php', $this, 'hide_default_term_fields');
 
         $this->remove_default_category();
     }
@@ -94,22 +91,16 @@ final class Panel
     }
 
     /**
-     * Kategori ekleme/düzenleme ekranında varsayılan slug ve description alanlarını gizlemek için CSS enjekte et
+     * Global admin chrome: submenu divider and taxonomy field hide.
      */
-    public function hide_default_term_fields()
+    public function enqueue_admin_chrome(): void
     {
-        $screen = get_current_screen();
-        // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- admin screen routing only.
-        $taxonomy = isset($_GET['taxonomy']) ? sanitize_key(wp_unslash($_GET['taxonomy'])) : '';
-        if ($taxonomy !== 'happybites_menu_category') {
-            return;
-        }
-        echo '<style>
-            /* Yeni kategori ekleme formundaki Kısaltma ve Açıklama */
-            .term-slug-wrap, .term-description-wrap { display:none !important; }
-            /* Düzenleme ekranında table içindeki aynı alanlar */
-            .form-table .term-slug-wrap, .form-table .term-description-wrap { display:none !important; }
-        </style>';
+        wp_enqueue_style(
+            'happybites-admin-chrome',
+            HAPPYBITES_PLUGIN_URL . 'admin/css/admin-chrome.css',
+            [],
+            HAPPYBITES_VERSION
+        );
     }
 
     /**
@@ -236,16 +227,6 @@ final class Panel
         }
 
         $submenu[$parent] = $items;
-    }
-
-    /** Divider için ufak CSS */
-    public function submenu_divider_css()
-    {
-        echo '<style>
-                #adminmenu .wp-submenu .hb-divider {
-                    display:block; border-top:1px solid rgba(0,0,0,0.3); margin:3px 0; height:1px; pointer-events:none;
-                }
-              </style>';
     }
 
     /**
@@ -381,14 +362,38 @@ final class Panel
 
         register_setting('happybites_options', 'happybites_settings', $array_args);
         register_setting('happybites_options', 'happybites_languages', $array_args);
-        register_setting('happybites_options', 'happybites_restaurant_info', $array_args);
+        register_setting('happybites_options', 'happybites_restaurant_info', [
+            'type' => 'array',
+            'sanitize_callback' => [$this, 'sanitize_restaurant_info_option'],
+            'default' => [],
+        ]);
         register_setting('happybites_options', 'happybites_working_hours', $array_args);
-        register_setting('happybites_options', 'happybites_social_media', $array_args);
-        register_setting('happybites_options', 'happybites_colors', $array_args);
+        register_setting('happybites_options', 'happybites_social_media', [
+            'type' => 'array',
+            'sanitize_callback' => [$this, 'sanitize_social_media_option'],
+            'default' => [],
+        ]);
+        register_setting('happybites_options', 'happybites_colors', [
+            'type' => 'array',
+            'sanitize_callback' => [$this, 'sanitize_colors_option'],
+            'default' => [],
+        ]);
         register_setting('happybites_options', 'happybites_theme_mode', $array_args);
-        register_setting('happybites_options', 'happybites_wifi', $array_args);
-        register_setting('happybites_options', 'happybites_information', $array_args);
-        register_setting('happybites_options', 'happybites_slug', $array_args);
+        register_setting('happybites_options', 'happybites_wifi', [
+            'type' => 'array',
+            'sanitize_callback' => [$this, 'sanitize_wifi_option'],
+            'default' => [],
+        ]);
+        register_setting('happybites_options', 'happybites_information', [
+            'type' => 'array',
+            'sanitize_callback' => [$this, 'sanitize_information_option'],
+            'default' => [],
+        ]);
+        register_setting('happybites_options', 'happybites_slug', [
+            'type' => 'array',
+            'sanitize_callback' => [$this, 'sanitize_slug_option'],
+            'default' => ['slug' => 'qrmenu'],
+        ]);
         register_setting('happybites_options', 'happybites_default_language', $string_args);
         register_setting('happybites_options', 'happybites_default_currency', $string_args);
     }
@@ -404,6 +409,122 @@ final class Panel
         }
 
         return map_deep($value, 'sanitize_text_field');
+    }
+
+    /**
+     * @param mixed $value
+     * @return array<string, mixed>
+     */
+    public function sanitize_restaurant_info_option($value): array
+    {
+        if (!is_array($value)) {
+            return [];
+        }
+
+        $show_credit = $value['show_credit'] ?? '0';
+
+        return [
+            'title' => sanitize_text_field((string) ($value['title'] ?? '')),
+            'logo_url' => esc_url_raw((string) ($value['logo_url'] ?? '')),
+            'logo_id' => absint($value['logo_id'] ?? 0),
+            'header_bg_url' => esc_url_raw((string) ($value['header_bg_url'] ?? '')),
+            'header_bg_id' => absint($value['header_bg_id'] ?? 0),
+            'slogan' => sanitize_text_field((string) ($value['slogan'] ?? '')),
+            'privacy_policy_url' => esc_url_raw((string) ($value['privacy_policy_url'] ?? '')),
+            'show_credit' => (!empty($show_credit) && $show_credit !== '0' && $show_credit !== false) ? '1' : '0',
+        ];
+    }
+
+    /**
+     * @param mixed $value
+     * @return array<string, string>
+     */
+    public function sanitize_social_media_option($value): array
+    {
+        if (!is_array($value)) {
+            return [];
+        }
+
+        $keys = [
+            'facebook', 'twitter', 'instagram', 'linkedin', 'youtube',
+            'tiktok', 'whatsapp', 'tripadvisor', 'google_business',
+        ];
+        $out = [];
+
+        foreach ($keys as $key) {
+            $out[$key] = esc_url_raw((string) ($value[$key] ?? ''));
+        }
+
+        return $out;
+    }
+
+    /**
+     * @param mixed $value
+     * @return array<string, mixed>
+     */
+    public function sanitize_colors_option($value): array
+    {
+        if (!is_array($value)) {
+            return [];
+        }
+
+        return ThemeSettings::sanitize_input($value);
+    }
+
+    /**
+     * WiFi SSID is plain text; the password must not run through sanitize_text_field().
+     *
+     * @param mixed $value
+     * @return array<string, string>
+     */
+    public function sanitize_wifi_option($value): array
+    {
+        if (!is_array($value)) {
+            return [];
+        }
+
+        return [
+            'ssid' => sanitize_text_field((string) ($value['ssid'] ?? '')),
+            'password' => $this->sanitize_wifi_password((string) ($value['password'] ?? '')),
+        ];
+    }
+
+    private function sanitize_wifi_password(string $password): string
+    {
+        $password = wp_unslash($password);
+
+        return (string) preg_replace('/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/', '', $password);
+    }
+
+    /**
+     * @param mixed $value
+     * @return array<string, string>
+     */
+    public function sanitize_information_option($value): array
+    {
+        if (!is_array($value)) {
+            return [];
+        }
+
+        return [
+            'html_info' => wp_kses_post((string) ($value['html_info'] ?? '')),
+        ];
+    }
+
+    /**
+     * @param mixed $value
+     * @return array<string, string>
+     */
+    public function sanitize_slug_option($value): array
+    {
+        $raw = is_array($value) ? (string) ($value['slug'] ?? '') : (string) $value;
+        $slug = sanitize_title($raw);
+
+        if ($slug === '') {
+            $slug = 'qrmenu';
+        }
+
+        return ['slug' => $slug];
     }
 
     /**

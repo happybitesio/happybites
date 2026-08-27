@@ -22,9 +22,12 @@ export function ProUpgradeCard({
       <h3 className="hb-pro-upgrade__title">{title}</h3>
       <p className="hb-pro-upgrade__desc">{description}</p>
       <ul className="hb-pro-upgrade__features">
-        <li>{t('pro.featureStories')}</li>
-        <li>{t('pro.featureMcp')}</li>
         <li>{t('pro.featureDesign')}</li>
+        <li>{t('pro.featureStories')}</li>
+        <li>{t('pro.featureDock')}</li>
+        <li>{t('pro.featureAnalytics')}</li>
+        <li>{t('pro.featureTransfer')}</li>
+        <li>{t('pro.featureMcp')}</li>
       </ul>
       <a
         href={pro.checkout_url}

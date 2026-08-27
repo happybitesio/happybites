@@ -123,7 +123,7 @@ final class ReviewEndpoint
 
     private function is_rate_limited(): bool
     {
-        $ip = $this->client_ip();
+        $ip = $this->rate_limit_ip();
         $key = 'hb_review_' . md5($ip);
         $count = (int) get_transient($key);
 
@@ -132,31 +132,15 @@ final class ReviewEndpoint
 
     private function record_submission(): void
     {
-        $ip = $this->client_ip();
+        $ip = $this->rate_limit_ip();
         $key = 'hb_review_' . md5($ip);
         $count = (int) get_transient($key);
 
         set_transient($key, $count + 1, self::RATE_LIMIT_WINDOW);
     }
 
-    private function client_ip(): string
+    private function rate_limit_ip(): string
     {
-        $keys = ['HTTP_CLIENT_IP', 'HTTP_X_FORWARDED_FOR', 'REMOTE_ADDR'];
-
-        foreach ($keys as $key) {
-            if (empty($_SERVER[$key])) {
-                continue;
-            }
-
-            foreach (explode(',', sanitize_text_field(wp_unslash($_SERVER[$key]))) as $ip) {
-                $ip = trim($ip);
-
-                if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE)) {
-                    return $ip;
-                }
-            }
-        }
-
         if (!isset($_SERVER['REMOTE_ADDR'])) {
             return '0.0.0.0';
         }
@@ -164,5 +148,10 @@ final class ReviewEndpoint
         $remote = sanitize_text_field(wp_unslash($_SERVER['REMOTE_ADDR']));
 
         return filter_var($remote, FILTER_VALIDATE_IP) ? $remote : '0.0.0.0';
+    }
+
+    private function client_ip(): string
+    {
+        return $this->rate_limit_ip();
     }
 }

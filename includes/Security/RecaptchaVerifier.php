@@ -70,22 +70,12 @@ final class RecaptchaVerifier
 
     private static function client_ip(): string
     {
-        $keys = ['HTTP_CLIENT_IP', 'HTTP_X_FORWARDED_FOR', 'REMOTE_ADDR'];
-
-        foreach ($keys as $key) {
-            if (empty($_SERVER[$key])) {
-                continue;
-            }
-
-            foreach (explode(',', sanitize_text_field(wp_unslash($_SERVER[$key]))) as $ip) {
-                $ip = trim($ip);
-
-                if (filter_var($ip, FILTER_VALIDATE_IP)) {
-                    return $ip;
-                }
-            }
+        if (!isset($_SERVER['REMOTE_ADDR'])) {
+            return '0.0.0.0';
         }
 
-        return '0.0.0.0';
+        $remote = sanitize_text_field(wp_unslash($_SERVER['REMOTE_ADDR']));
+
+        return filter_var($remote, FILTER_VALIDATE_IP) ? $remote : '0.0.0.0';
     }
 }

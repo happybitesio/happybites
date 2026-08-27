@@ -9,6 +9,7 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['placeholder.svg', 'icon.svg', 'flags/*.png'],
+      manifestFilename: 'manifest.json',
       manifest: {
         name: 'HappyBites Menu',
         short_name: 'Menu',

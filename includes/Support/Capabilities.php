@@ -70,6 +70,9 @@ final class Capabilities
                 'mcp' => self::can_mcp(),
                 'custom_design' => self::can_custom_design(),
                 'stories' => self::can_stories(),
+                'analytics' => (bool) apply_filters('happybites_can_analytics', false),
+                'dock' => (bool) apply_filters('happybites_can_dock', false),
+                'menu_transfer' => (bool) apply_filters('happybites_can_menu_transfer', false),
             ],
         ];
 

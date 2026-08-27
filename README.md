@@ -4,7 +4,7 @@
 
 Guests scan a code and your menu opens instantly. No PDF. No extra app to install. You manage everything from WordPress.
 
-[Website](https://happybites.io) · [Get Pro](https://happybites.io/checkout)
+[Website](https://happybites.io) · [Get Pro](https://happybites.io)
 
 ![WordPress 5.8+](https://img.shields.io/badge/WordPress-5.8+-21759B?logo=wordpress&logoColor=white)
 ![PHP 7.4+](https://img.shields.io/badge/PHP-7.4+-777BB4?logo=php&logoColor=white)
@@ -26,7 +26,7 @@ The guest menu never adds a HappyBites credit unless you turn it on.
 
 ## What you can do
 
-| | Free | [Pro](https://happybites.io/checkout) |
+| | Free | [Pro](https://happybites.io) |
 |---|---|---|
 | Unlimited categories & products | ✓ | ✓ |
 | QR menu & mobile PWA | ✓ | ✓ |
@@ -47,7 +47,7 @@ The guest menu never adds a HappyBites credit unless you turn it on.
 3. Copy the menu URL or QR code from **Settings → General**.
 4. Put the code on the table. That’s it.
 
-Need a custom look, stories, analytics, a footer bar, or AI tools? Install [HappyBites Pro](https://happybites.io/checkout) and activate your license under **HappyBites → License**.
+Need a custom look, stories, analytics, a footer bar, or AI tools? Install [HappyBites Pro](https://happybites.io) and activate your license under **HappyBites → License**.
 
 ## For developers
 

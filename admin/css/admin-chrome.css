@@ -1,0 +1,51 @@
+/**
+ * Small admin UI chrome (submenu divider, taxonomy field hide, category picker).
+ *
+ * @package HappyBites
+ */
+
+#adminmenu .wp-submenu .hb-divider {
+	display: block;
+	border-top: 1px solid rgba(0, 0, 0, 0.3);
+	margin: 3px 0;
+	height: 1px;
+	pointer-events: none;
+}
+
+body.taxonomy-happybites_menu_category .term-slug-wrap,
+body.taxonomy-happybites_menu_category .term-description-wrap,
+body.taxonomy-happybites_menu_category .form-table .term-slug-wrap,
+body.taxonomy-happybites_menu_category .form-table .term-description-wrap {
+	display: none !important;
+}
+
+.category-selection {
+	margin: 10px 0;
+}
+
+.category-options label {
+	display: block;
+	margin: 8px 0;
+	padding: 5px;
+	cursor: pointer;
+}
+
+.category-options label:hover {
+	background-color: #f9f9f9;
+}
+
+.category-options input[type="radio"] {
+	margin-right: 8px;
+}
+
+.main-category span {
+	font-weight: bold;
+}
+
+.category-hierarchy {
+	margin-left: 20px !important;
+}
+
+.subcategory-hierarchy {
+	margin-left: 40px !important;
+}

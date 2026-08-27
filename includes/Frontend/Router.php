@@ -259,7 +259,7 @@ final class Router
 
         $base_tag = '<base href="' . esc_url(home_url($base_path)) . '">';
         $theme_meta = $this->build_theme_color_meta();
-        $script = '<script>window.HAPPYBITES_CONFIG=' . wp_json_encode($config) . ';</script>';
+        $script = $this->print_runtime_config_script($config);
         $injection = $base_tag . $theme_meta . $script;
 
         /**
@@ -290,6 +290,31 @@ final class Router
         }
 
         return $html . $extra;
+    }
+
+    /**
+     * @param array<string, mixed> $config
+     */
+    private function print_runtime_config_script(array $config): string
+    {
+        wp_register_script(
+            'happybites-pwa-config',
+            HAPPYBITES_PLUGIN_URL . 'public/js/pwa-config.js',
+            [],
+            HAPPYBITES_VERSION,
+            false
+        );
+        wp_enqueue_script('happybites-pwa-config');
+        wp_add_inline_script(
+            'happybites-pwa-config',
+            'window.HAPPYBITES_CONFIG=' . wp_json_encode($config) . ';',
+            'before'
+        );
+
+        ob_start();
+        wp_print_scripts('happybites-pwa-config');
+
+        return (string) ob_get_clean();
     }
 
     private function build_theme_color_meta(): string

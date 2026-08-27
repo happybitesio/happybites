@@ -303,6 +303,9 @@ export interface ProFeatures {
   mcp: boolean;
   custom_design: boolean;
   stories: boolean;
+  analytics?: boolean;
+  dock?: boolean;
+  menu_transfer?: boolean;
 }
 
 export interface ProStatus {

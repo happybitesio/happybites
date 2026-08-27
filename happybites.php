@@ -3,7 +3,7 @@
  * Plugin Name: HappyBites – QR Code Food Menu
  * Plugin URI: https://happybites.io
  * Description: Create a modern, mobile-friendly QR food menu for your restaurant, fully integrated with WordPress.
-     * Version: 2.0.4
+     * Version: 2.0.5
  * Requires at least: 5.8
  * Tested up to: 7.1
  * Requires PHP: 7.4
@@ -20,7 +20,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('HAPPYBITES_VERSION', '2.0.4');
+define('HAPPYBITES_VERSION', '2.0.5');
 define('HAPPYBITES_PLUGIN_FILE', __FILE__);
 define('HAPPYBITES_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('HAPPYBITES_PLUGIN_PATH', plugin_dir_path(__FILE__));

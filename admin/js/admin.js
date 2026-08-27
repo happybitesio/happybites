@@ -330,12 +330,10 @@
         
         // jQuery UI Sortable'ı yükle
         if (typeof $.fn.sortable === 'undefined') {
-            loadScript('https://code.jquery.com/ui/1.13.2/jquery-ui.min.js', function() {
-                initSortable();
-            });
-        } else {
-            initSortable();
+            return;
         }
+
+        initSortable();
         
         // Kategori toggle butonları
         $('.toggle-products').on('click', function() {
@@ -478,16 +476,6 @@
                 $(this).remove();
             });
         }, 3000);
-    }
-    
-    /**
-     * Script yükleme
-     */
-    function loadScript(src, callback) {
-        var script = document.createElement('script');
-        script.src = src;
-        script.onload = callback;
-        document.head.appendChild(script);
     }
     
     // Global fonksiyonlar

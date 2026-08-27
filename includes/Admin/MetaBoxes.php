@@ -415,39 +415,6 @@ final class MetaBoxes
                 <?php $this->display_hierarchical_categories($categories, $selected_category); ?>
             </div>
         </div>
-
-        <style>
-            .category-selection {
-                margin: 10px 0;
-            }
-
-            .category-options label {
-                display: block;
-                margin: 8px 0;
-                padding: 5px;
-                cursor: pointer;
-            }
-
-            .category-options label:hover {
-                background-color: #f9f9f9;
-            }
-
-            .category-options input[type="radio"] {
-                margin-right: 8px;
-            }
-
-            .main-category span {
-                font-weight: bold;
-            }
-
-            .category-hierarchy {
-                margin-left: 20px !important;
-            }
-
-            .subcategory-hierarchy {
-                margin-left: 40px !important;
-            }
-        </style>
         <?php
     }
 

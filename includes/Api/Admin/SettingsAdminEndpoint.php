@@ -93,9 +93,13 @@ final class SettingsAdminEndpoint
         }
 
         if (isset($params['wifi']) && is_array($params['wifi'])) {
+            $password = isset($params['wifi']['password']) ? (string) $params['wifi']['password'] : '';
+            $password = wp_unslash($password);
+            $password = (string) preg_replace('/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/', '', $password);
+
             update_option(Options::WIFI, [
                 'ssid' => sanitize_text_field($params['wifi']['ssid'] ?? ''),
-                'password' => sanitize_text_field($params['wifi']['password'] ?? ''),
+                'password' => $password,
             ]);
         }
 

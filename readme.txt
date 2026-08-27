@@ -1,10 +1,10 @@
 === HappyBites – QR Code Food Menu ===
-Contributors: happybitesteam
+Contributors: happybites
 Tags: restaurant, menu, qr code, food menu, digital menu
 Requires at least: 5.8
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 2.0.4
+Stable tag: 2.0.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,9 +26,12 @@ The guest menu does not add credit or promotional links unless you opt in under 
 
 The free plugin includes the full menu, presets, reviews, and multi-language support. **HappyBites Pro** is a separate add-on (annual subscription) that unlocks:
 
-* MCP — AI agent menu management
 * Custom design — color editor, logo-based themes, browser theme-color, header overlay
 * Instagram-style menu stories
+* Footer bar on the guest menu
+* Analytics via Google Tag Manager
+* Menu import and export
+* MCP — AI agent menu management
 
 Purchase: https://happybites.io/checkout
 
@@ -61,7 +64,7 @@ MCP is a **HappyBites Pro** feature. Purchase at https://happybites.io/checkout,
 
 = What is HappyBites Pro? =
 
-Pro is a separate plugin (annual subscription) that adds MCP, custom theme design, and menu stories. Free users keep full menu management and built-in theme presets.
+Pro is a separate plugin (annual subscription) that adds custom design, menu stories, a guest-menu footer bar, Google Tag Manager analytics, menu import/export, and MCP. Free users keep full menu management and built-in theme presets.
 
 = How do I show a HappyBites credit on the guest menu? =
 
@@ -73,11 +76,26 @@ The review form may collect optional name, email, comment, ratings, IP address, 
 
 If Google reCAPTCHA v3 is enabled, review submissions send a token to Google for spam checks. See Google’s privacy policy: https://policies.google.com/privacy
 
+== External services ==
+
+This plugin can connect to **Google reCAPTCHA v3** when you enable it under **HappyBites → Settings → Security**. It is used only to reduce spam on the guest review form.
+
+When a guest submits a review, the plugin sends the reCAPTCHA response token (and the server IP WordPress sees) to Google’s verification API at `https://www.google.com/recaptcha/api/siteverify`. The guest browser also loads `https://www.google.com/recaptcha/api.js` to obtain that token.
+
+No account with HappyBites is required. You must create your own reCAPTCHA v3 keys in Google’s admin console. If the keys are empty, the plugin does not call Google.
+
+Google terms of service: https://policies.google.com/terms
+Google privacy policy: https://policies.google.com/privacy
+Google reCAPTCHA: https://www.google.com/recaptcha/about/
+
 == Source code ==
 
 Compiled admin and guest-menu JavaScript ships in `public/admin/` and `public/pwa/`. The corresponding source and build tools are included in `admin-app/` and `pwa/` (run `npm install` then `npm run build` in each folder). Development repository: https://github.com/happybitesio/happybites
 
 == Changelog ==
+
+= 2.0.5 =
+* Address Plugin Directory review notes: enqueue admin/PWA assets, field-aware settings sanitization, local jQuery UI, and review rate-limiting by REMOTE_ADDR
 
 = 2.0.4 =
 * Finish remaining Plugin Check warnings (escaping, prepared reviews queries, CLI scripts, hidden files)
