@@ -1,0 +1,120 @@
+{
+  "common": {
+    "loading": "Se încarcă...",
+    "error": "Eroare",
+    "success": "Succes",
+    "cancel": "Anulează",
+    "close": "Închide",
+    "closed": "Închis",
+    "save": "Salvează",
+    "submit": "Trimite",
+    "clear": "Șterge",
+    "all": "Toate",
+    "search": "Caută",
+    "filter": "Filtrează",
+    "results": "rezultate",
+    "privacyPolicy": "Politica de confidențialitate",
+    "more": "Mai mult"
+  },
+  "menu": {
+    "loading": "Se încarcă meniul...",
+    "loadingDescription": "Vă rugăm așteptați",
+    "loadError": "Meniul nu a putut fi încărcat",
+    "tryAgain": "Încearcă din nou",
+    "searchPlaceholder": "Caută preparate...",
+    "searchResults": "Rezultate pentru",
+    "noResults": "Niciun rezultat găsit",
+    "noResultsDescription": "Încercați alte cuvinte cheie",
+    "categories": "Categorii",
+    "features": "Caracteristici",
+    "description": "Descriere",
+    "ingredients": "Ingrediente",
+    "allergens": "Avertisment alergeni",
+    "origin": "Origine",
+    "additives": "Aditivi",
+    "nutritionFacts": "Informații nutriționale",
+    "portion": "Porție: ",
+    "spiceLevel": "Nivel de iuțeală",
+    "weight": "g",
+    "minutes": "min",
+    "viewList": "Vizualizare listă",
+    "viewBento": "Vizualizare grid"
+  },
+  "filters": {
+    "title": "Filtre",
+    "tags": "Etichete",
+    "spiceLevel": "Nivel de iuțeală",
+    "clearAll": "Șterge toate filtrele"
+  },
+  "tags": {
+    "popular": "Popular",
+    "chef_special": "Specialitatea casei",
+    "vegetarian": "Vegetarian",
+    "vegan": "Vegan",
+    "organic": "Organic",
+    "spicy": "Picant",
+    "new_product": "Produs nou",
+    "gluten_free": "Fără gluten",
+    "lactose_free": "Fără lactoză",
+    "seasonal": "Sezonier",
+    "halal": "Halal",
+    "kosher": "Kosher",
+    "low_calorie": "Calorii reduse",
+    "low_sodium": "Sodiu redus",
+    "low_sugar": "Zahăr redus",
+    "out_of_stock": "Stoc epuizat",
+    "ribbon": {
+      "sold_out": "Epuizat",
+      "popular": "Popular",
+      "new": "Nou"
+    }
+  },
+  "restaurant": {
+    "open": "Deschis",
+    "wifi": "WiFi",
+    "organicIngredients": "Ingrediente organice",
+    "freshlyPrepared": "Proaspăt preparat",
+    "traditionalFlavors": "Arome tradiționale",
+    "allRightsReserved": "Creat de <a href='https://happybites.io/?utm_source=happybites-plugin&utm_medium=pwa-footer&utm_campaign=created-by' target='_blank' class='text-primary'>Happybites</a>.",
+    "promo": "Creează-ți propriul meniu QR gratuit, self-hosted, cu WordPress."
+  },
+  "language": {
+    "select": "Selectează limba"
+  },
+  "social": {
+    "title": "Rețele sociale"
+  },
+  "wifi": {
+    "title": "Informații conexiune WiFi",
+    "description": "Scanați codul QR pentru a vă conecta la WiFi",
+    "ssid": "SSID",
+    "password": "Parolă",
+    "copy": "Copiază",
+    "copied": "Copiat"
+  },
+  "information": {
+    "title": "Informații suplimentare",
+    "shortLabel": "Info"
+  },
+  "review": {
+    "title": "Evaluează-ne",
+    "rateExperience": "Evaluează experiența ta",
+    "service": "Serviciu",
+    "taste": "Gust",
+    "cleanliness": "Curățenie",
+    "comments": "Comentariile tale",
+    "commentsPlaceholder": "Împărtășește experiența ta cu noi...",
+    "submitting": "Se trimite...",
+    "submitError": "Evaluarea nu a putut fi trimisă. Încearcă din nou.",
+    "privacyNotice": "Datele trimise sunt procesate conform",
+    "privacyPolicy": "Politicii de confidențialitate",
+    "thankYou": "Mulțumim!",
+    "thankYouMessage": "Feedback-ul tău este foarte valoros pentru noi. Mulțumim pentru evaluare!",
+    "customerInfoNote": "Poți opțional să ne lași datele de contact. Ne ajută să îți oferim un serviciu mai bun!",
+    "customerName": "Numele tău",
+    "customerNamePlaceholder": "Introdu numele tău",
+    "customerEmail": "Emailul tău",
+    "customerEmailPlaceholder": "exemplu@email.com",
+    "optional": "Opțional"
+  }
+}

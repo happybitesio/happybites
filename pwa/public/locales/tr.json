@@ -1,0 +1,130 @@
+{
+  "common": {
+    "loading": "Yükleniyor...",
+    "error": "Hata",
+    "success": "Başarılı",
+    "cancel": "İptal",
+    "close": "Kapat",
+    "closed": "Kapalı",
+    "save": "Kaydet",
+    "submit": "Gönder",
+    "clear": "Temizle",
+    "all": "Tümü",
+    "search": "Ara",
+    "filter": "Filtrele",
+    "results": "sonuç",
+    "privacyPolicy": "Gizlilik Politikası",
+    "more": "Daha fazla"
+  },
+  "menu": {
+    "loading": "Menü Yükleniyor...",
+    "loadingDescription": "Lütfen bekleyiniz",
+    "loadError": "Menü Yüklenemedi",
+    "tryAgain": "Tekrar Dene",
+    "searchPlaceholder": "Yemek ara...",
+    "searchResults": "için arama sonuçları",
+    "noResults": "Sonuç bulunamadı",
+    "noResultsDescription": "Farklı anahtar kelimeler deneyin",
+    "categories": "Kategoriler",
+    "features": "Özellikler",
+    "description": "Açıklama",
+    "ingredients": "İçindekiler",
+    "allergens": "Alerjen Uyarısı",
+    "origin": "Menşei",
+    "additives": "Katkı Maddeleri",
+    "nutritionFacts": "Beslenme Değerleri",
+    "portion": "Porsiyon: ",
+    "spiceLevel": "Acılık Seviyesi",
+    "weight": "g",
+    "minutes": "dk",
+    "viewList": "Liste görünümü",
+    "viewBento": "Bento görünümü",
+    "backToCategories": "Tüm kategoriler"
+  },
+  "filters": {
+    "title": "Filtreler",
+    "tags": "Etiketler",
+    "spiceLevel": "Acılık Seviyesi",
+    "clearAll": "Tüm Filtreleri Temizle"
+  },
+  "tags": {
+    "popular": "Popüler",
+    "chef_special": "Şef Önerisi",
+    "vegetarian": "Vejetaryen",
+    "vegan": "Vegan",
+    "organic": "Organik",
+    "spicy": "Acılı",
+    "new_product": "Yeni Ürün",
+    "gluten_free": "Gluten Free",
+    "lactose_free": "Laktoz Free",
+    "seasonal": "Sezonluk",
+    "halal": "Halal",
+    "kosher": "Kosher",
+    "low_calorie": "Düşük Kalori",
+    "low_sodium": "Düşük Tuz",
+    "low_sugar": "Düşük Şeker",
+    "out_of_stock": "Stokta Yok",
+    "ribbon": {
+      "sold_out": "Tükendi",
+      "popular": "Popüler",
+      "new": "Yeni"
+    }
+  },
+  "restaurant": {
+    "open": "Açık",
+    "wifi": "WiFi",
+    "share": "Paylaş",
+    "linkCopied": "Bağlantı kopyalandı",
+    "rateUs": "Bizi Değerlendir",
+    "organicIngredients": "Organik Malzemeler",
+    "freshlyPrepared": "Taze Hazırlanır",
+    "traditionalFlavors": "Geleneksel Lezzetler",
+    "allRightsReserved": "<a href='https://happybites.io/?utm_source=happybites-plugin&utm_medium=pwa-footer&utm_campaign=created-by' target='_blank' class='text-primary'>Happybites</a> tarafından oluşturuldu.",
+    "promo": "Kendi QR menünüzü oluşturun WordPress ile, ücretsiz ve kendi sunucunuzda."
+  },
+  "language": {
+    "select": "Dil Seçin"
+  },
+  "social": {
+    "title": "Sosyal Medya"
+  },
+  "wifi": {
+    "title": "WiFi Bağlantı Bilgileri",
+    "description": "QR kodu tarayarak WiFi'ye bağlanın",
+    "ssid": "SSID",
+    "password": "Şifre",
+    "copy": "Kopyala",
+    "copied": "Kopyalandı"
+  },
+  "information": {
+    "title": "Ek Bilgi",
+    "shortLabel": "Bilgi"
+  },
+  "review": {
+    "title": "Bizi Değerlendirin",
+    "rateExperience": "Deneyiminizi Değerlendirin",
+    "service": "Servis",
+    "taste": "Lezzet",
+    "cleanliness": "Temizlik",
+    "comments": "Görüşleriniz",
+    "commentsPlaceholder": "Deneyiminizi bizimle paylaşın...",
+    "submitting": "Gönderiliyor...",
+    "submitError": "Yorum gönderilemedi. Lütfen tekrar deneyin.",
+    "privacyNotice": "Gönderilen bilgiler şu politika kapsamında işlenir:",
+    "privacyPolicy": "Gizlilik Politikası",
+    "thankYou": "Teşekkür Ederiz!",
+    "thankYouMessage": "Görüşleriniz bizim için çok değerli. Geri bildiriminiz için teşekkür ederiz!",
+    "customerInfoNote": "İsteğe bağlı olarak iletişim bilgilerinizi paylaşabilirsiniz. Bu sayede size daha iyi hizmet verebiliriz!",
+    "customerName": "Adınız",
+    "customerNamePlaceholder": "Adınızı girin",
+    "customerEmail": "E-posta Adresiniz",
+    "customerEmailPlaceholder": "ornek@email.com",
+    "optional": "İsteğe bağlı"
+  },
+  "stories": {
+    "viewProduct": "Ürünü gör",
+    "previous": "Önceki hikaye",
+    "next": "Sonraki hikaye",
+    "untitled": "Hikaye"
+  }
+}

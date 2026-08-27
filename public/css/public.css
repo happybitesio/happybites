@@ -1,0 +1,196 @@
+/**
+ * HappyBites Public CSS
+ *
+ * @package HappyBites
+ * @since 1.0.0
+ */
+
+.happybites-container {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.happybites-content {
+    text-align: center;
+}
+
+.happybites-content h3 {
+    color: #333;
+    margin: 0 0 15px 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.happybites-content p {
+    color: #666;
+    margin: 0 0 15px 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.happybites-advanced {
+    background: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 15px 0;
+    border: 1px solid #e0e0e0;
+}
+
+.happybites-button {
+    background: #0073aa;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.happybites-button:hover {
+    background: #005a87;
+}
+
+.happybites-button:active {
+    transform: translateY(1px);
+}
+
+.happybites-footer {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.happybites-footer small {
+    color: #999;
+    font-size: 12px;
+}
+
+/* Farklı türler için stiller */
+.happybites-container[data-type="advanced"] {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+}
+
+.happybites-container[data-type="advanced"] .happybites-content h3,
+.happybites-container[data-type="advanced"] .happybites-content p {
+    color: #fff;
+}
+
+.happybites-container[data-type="advanced"] .happybites-advanced {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.2);
+}
+
+.happybites-container[data-type="advanced"] .happybites-footer small {
+    color: rgba(255,255,255,0.7);
+}
+
+/* Responsive tasarım */
+@media (max-width: 768px) {
+    .happybites-container {
+        padding: 15px;
+        margin: 15px 0;
+    }
+    
+    .happybites-content h3 {
+        font-size: 20px;
+    }
+    
+    .happybites-content p {
+        font-size: 14px;
+    }
+    
+    .happybites-button {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}
+
+/* Animasyonlar */
+.happybites-container {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover efektleri */
+.happybites-container:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+/* Loading durumu */
+.happybites-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.happybites-loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #0073aa;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.happybites-qr-menu-container {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.qr-menu-title {
+    margin: 0 0 8px;
+    font-size: 1.25rem;
+}
+
+.qr-menu-description {
+    margin: 0 0 16px;
+    color: #555;
+}
+
+.qr-menu-button {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #f2750a;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.qr-menu-button:hover,
+.qr-menu-button:focus {
+    color: #fff;
+    opacity: 0.9;
+} 

@@ -1,0 +1,1 @@
+{"name":"HappyBites Menu","short_name":"Menu","description":"QR food menu for restaurants","start_url":"./","display":"standalone","background_color":"#ffffff","theme_color":"#f2750a","lang":"en","scope":"./","icons":[{"src":"icon.svg","sizes":"192x192","type":"image/svg+xml"},{"src":"icon.svg","sizes":"512x512","type":"image/svg+xml"}]}

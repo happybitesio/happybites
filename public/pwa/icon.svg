@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="HappyBites">
+  <rect width="512" height="512" rx="112" fill="#f2750a"/>
+  <path fill="#fff" d="M156 168c0-22 18-40 40-40h120c22 0 40 18 40 40v24H156v-24Zm0 64h200v152c0 22-18 40-40 40H196c-22 0-40-18-40-40V232Zm72 40v96h48v-96h-48Z"/>
+  <circle cx="256" cy="152" r="18" fill="#fff" opacity="0.9"/>
+</svg>

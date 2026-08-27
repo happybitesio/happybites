@@ -1,0 +1,113 @@
+{
+    "common": {
+      "loading": "로딩 중...",
+      "error": "오류",
+      "success": "성공",
+      "cancel": "취소",
+      "close": "닫기",
+      "closed": "마감됨",
+      "save": "저장",
+      "submit": "제출",
+      "clear": "지우기",
+      "all": "전체",
+      "search": "검색",
+      "filter": "필터",
+      "results": "결과",
+      "privacyPolicy": "개인정보 처리방침",
+      "more": "더보기"
+    },
+    "menu": {
+      "loading": "메뉴 로딩 중...",
+      "loadingDescription": "잠시만 기다려 주세요",
+      "loadError": "메뉴 불러오기 실패",
+      "tryAgain": "다시 시도",
+      "searchPlaceholder": "음식 검색...",
+      "searchResults": "검색 결과:",
+      "noResults": "결과 없음",
+      "noResultsDescription": "다른 키워드를 시도해 보세요",
+      "categories": "카테고리",
+      "features": "특징",
+      "description": "설명",
+      "ingredients": "재료",
+      "allergens": "알레르기 경고",
+      "origin": "원산지",
+      "additives": "첨가물",
+      "nutritionFacts": "영양 정보",
+      "portion": "포션: ",
+      "spiceLevel": "매운맛 단계",
+      "weight": "g",
+      "minutes": "분"
+    },
+    "filters": {
+      "title": "필터",
+      "tags": "태그",
+      "spiceLevel": "매운맛 단계",
+      "clearAll": "모든 필터 지우기"
+    },
+    "tags": {
+      "popular": "인기",
+      "chef_special": "셰프 추천",
+      "vegetarian": "채식주의",
+      "vegan": "비건",
+      "organic": "유기농",
+      "spicy": "매운맛",
+      "new_product": "신제품",
+      "gluten_free": "글루텐 프리",
+      "lactose_free": "락토스 프리",
+      "seasonal": "계절 한정",
+      "halal": "할랄",
+      "kosher": "코셔",
+      "low_calorie": "저칼로리",
+      "low_sodium": "저나트륨",
+      "low_sugar": "저당",
+      "out_of_stock": "품절",
+      "ribbon": {
+        "sold_out": "품절",
+        "popular": "인기",
+        "new": "신규"
+      }
+    },
+    "restaurant": {
+      "open": "영업 중",
+      "wifi": "와이파이",
+      "organicIngredients": "유기농 재료",
+      "freshlyPrepared": "신선하게 조리됨",
+      "traditionalFlavors": "전통 맛",
+      "allRightsReserved": "<a href='https://happybites.io/?utm_source=happybites-plugin&utm_medium=pwa-footer&utm_campaign=created-by' target='_blank' class='text-primary'>Happybites</a>에서 제작.",
+      "promo": "WordPress로 나만의 QR 메뉴를 무료로 만들어 보세요."
+    },
+    "language": {
+      "select": "언어 선택"
+    },
+    "social": {
+      "title": "소셜 미디어"
+    },
+    "wifi": {
+      "title": "와이파이 연결 정보",
+      "description": "QR 코드를 스캔하여 와이파이에 연결하세요",
+      "ssid": "SSID",
+      "password": "비밀번호"
+    },
+    "review": {
+      "title": "평가하기",
+      "rateExperience": "경험을 평가해주세요",
+      "service": "서비스",
+      "taste": "맛",
+      "cleanliness": "청결",
+      "comments": "의견",
+      "commentsPlaceholder": "경험을 공유해주세요...",
+      "submitting": "제출 중...",
+      "submitError": "리뷰를 제출할 수 없습니다. 다시 시도해 주세요.",
+      "privacyNotice": "제출된 데이터는 당사",
+      "privacyPolicy": "개인정보 처리방침",
+      "thankYou": "감사합니다!",
+      "thankYouMessage": "귀하의 피드백은 저희에게 매우 소중합니다. 리뷰해 주셔서 감사합니다!",
+      "customerInfoNote": "선택적으로 연락처를 제공할 수 있습니다. 더 나은 서비스를 제공하는 데 도움이 됩니다!",
+      "customerName": "이름",
+      "customerNamePlaceholder": "이름 입력",
+      "customerEmail": "이메일",
+      "customerEmailPlaceholder": "example@email.com",
+      "optional": "선택 사항"
+    }
+  }
+  

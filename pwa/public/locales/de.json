@@ -1,0 +1,112 @@
+{
+  "common": {
+    "loading": "Laden...",
+    "error": "Fehler",
+    "success": "Erfolgreich",
+    "cancel": "Abbrechen",
+    "close": "Schließen",
+    "closed": "Geschlossen",
+    "save": "Speichern",
+    "submit": "Senden",
+    "clear": "Löschen",
+    "all": "Alle",
+    "search": "Suchen",
+    "filter": "Filter",
+    "results": "Ergebnisse",
+    "privacyPolicy": "Datenschutzerklärung",
+    "more": "Mehr"
+  },
+  "menu": {
+    "loading": "Menü wird geladen...",
+    "loadingDescription": "Bitte warten",
+    "loadError": "Menü konnte nicht geladen werden",
+    "tryAgain": "Erneut versuchen",
+    "searchPlaceholder": "Essen suchen...",
+    "searchResults": "Suchergebnisse für",
+    "noResults": "Keine Ergebnisse gefunden",
+    "noResultsDescription": "Versuchen Sie andere Suchbegriffe",
+    "categories": "Kategorien",
+    "features": "Eigenschaften",
+    "description": "Beschreibung",
+    "ingredients": "Zutaten",
+    "allergens": "Allergen-Warnung",
+    "origin": "Herkunft",
+    "additives": "Zusatzstoffe",
+    "nutritionFacts": "Nährwerte",
+    "portion": "Portion: ",
+    "spiceLevel": "Schärfegrad",
+    "weight": "g",
+    "minutes": "Min"
+  },
+  "filters": {
+    "title": "Filter",
+    "tags": "Tags",
+    "spiceLevel": "Schärfegrad",
+    "clearAll": "Alle Filter löschen"
+  },
+  "tags": {
+    "popular": "Beliebt",
+    "chef_special": "Empfehlung des Küchenchefs",
+    "vegetarian": "Vegetarisch",
+    "vegan": "Vegan",
+    "organic": "Bio",
+    "spicy": "Scharf",
+    "new_product": "Neu",
+    "gluten_free": "Glutenfrei",
+    "lactose_free": "Laktosefrei",
+    "seasonal": "Saisonal",
+    "halal": "Halal",
+    "kosher": "Kosher",
+    "low_calorie": "Niedrig Kalorien",
+    "low_sodium": "Niedrig Tz",
+    "low_sugar": "Niedrig Zucker",
+    "out_of_stock": "Ausverkauft",
+    "ribbon": {
+      "sold_out": "Aus",
+      "popular": "Beliebt",
+      "new": "Neu"
+    }
+  },
+  "restaurant": {
+    "open": "Geöffnet",
+    "wifi": "WiFi",
+    "organicIngredients": "Bio-Zutaten",
+    "freshlyPrepared": "Frisch Zubereitet",
+    "traditionalFlavors": "Traditionelle Aromen",
+    "allRightsReserved": "Erstellt von <a href='https://happybites.io/?utm_source=happybites-plugin&utm_medium=pwa-footer&utm_campaign=created-by' target='_blank' class='text-primary'>Happybites</a>.",
+    "promo": "Erstellen Sie Ihr eigenes QR-Menü kostenlos, selbst gehostet, mit WordPress."
+  },
+  "language": {
+    "select": "Sprache wählen"
+  },
+  "social": {
+    "title": "Soziale Medien"
+  },
+  "wifi": {
+    "title": "WiFi-Verbindung Informationen",
+    "description": "QR-Code scannen, um sich mit WiFi zu verbinden",
+    "ssid": "SSID",
+    "password": "Passwort"
+  },
+  "review": {
+    "title": "Bewerten Sie uns",
+    "rateExperience": "Bewerten Sie Ihre Erfahrung",
+    "service": "Service",
+    "taste": "Geschmack",
+    "cleanliness": "Sauberkeit",
+    "comments": "Ihre Kommentare",
+    "commentsPlaceholder": "Teilen Sie Ihre Erfahrung mit uns...",
+    "submitting": "Wird gesendet...",
+    "submitError": "Bewertung konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",
+    "privacyNotice": "Übermittelte Daten werden gemäß unserer",
+    "privacyPolicy": "Datenschutzerklärung",
+    "thankYou": "Vielen Dank!",
+    "thankYouMessage": "Ihr Feedback ist sehr wertvoll für uns. Vielen Dank für Ihre Bewertung!",
+    "customerInfoNote": "Sie können optional Ihre Kontaktinformationen teilen. Dies hilft uns, Ihnen besseren Service zu bieten!",
+    "customerName": "Ihr Name",
+    "customerNamePlaceholder": "Geben Sie Ihren Namen ein",
+    "customerEmail": "Ihre E-Mail",
+    "customerEmailPlaceholder": "beispiel@email.com",
+    "optional": "Optional"
+  }
+}

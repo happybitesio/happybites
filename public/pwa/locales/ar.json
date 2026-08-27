@@ -1,0 +1,110 @@
+{
+  "common": {
+    "loading": "جارٍ التحميل...",
+    "error": "خطأ",
+    "success": "تم بنجاح",
+    "cancel": "إلغاء",
+    "close": "إغلاق",
+    "closed": "مغلق",
+    "save": "حفظ",
+    "submit": "إرسال",
+    "clear": "مسح",
+    "all": "الكل",
+    "search": "بحث",
+    "filter": "تصفية",
+    "results": "نتائج",
+    "privacyPolicy": "سياسة الخصوصية",
+    "more": "المزيد"
+  },
+  "menu": {
+    "loading": "جارٍ تحميل القائمة...",
+    "loadingDescription": "الرجاء الانتظار",
+    "loadError": "تعذر تحميل القائمة",
+    "tryAgain": "حاول مرة أخرى",
+    "searchPlaceholder": "ابحث عن طعام...",
+    "searchResults": "نتائج البحث عن",
+    "noResults": "لا توجد نتائج",
+    "noResultsDescription": "جرب كلمات مفتاحية مختلفة",
+    "categories": "الفئات",
+    "features": "الميزات",
+    "description": "الوصف",
+    "ingredients": "المكونات",
+    "allergens": "تحذير من المواد المسببة للحساسية",
+    "origin": "المنشأ",
+    "additives": "المضافات",
+    "nutritionFacts": "القيم الغذائية",
+    "portion": "الحصة: ",
+    "spiceLevel": "درجة الحدة",
+    "weight": "غ",
+    "minutes": "د"
+  },
+  "filters": {
+    "title": "عوامل التصفية",
+    "tags": "الوسوم",
+    "spiceLevel": "درجة الحدة",
+    "clearAll": "مسح جميع عوامل التصفية"
+  },
+  "tags": {
+    "popular": "شائع",
+    "chef_special": "طبق الشيف الخاص",
+    "vegetarian": "نباتي",
+    "vegan": "نباتي صرف",
+    "organic": "عضوي",
+    "spicy": "حار",
+    "new_product": "منتج جديد",
+    "gluten_free": "خالٍ من الغلوتين",
+    "lactose_free": "خالٍ من اللاكتوز",
+    "seasonal": "موسمي",
+    "halal": "حلال",
+    "kosher": "كوشير",
+    "low_calorie": "قليل السعرات",
+    "low_sodium": "قليل الصوديوم",
+    "low_sugar": "قليل السكر",
+    "out_of_stock": "غير متوفر",
+    "ribbon": {
+      "sold_out": "نفد",
+      "popular": "شائع",
+      "new": "جديد"
+    }
+  },
+  "restaurant": {
+    "open": "مفتوح",
+    "wifi": "واي فاي",
+    "organicIngredients": "مكونات عضوية",
+    "freshlyPrepared": "محضّر طازجًا",
+    "traditionalFlavors": "نكهات تقليدية",
+    "allRightsReserved": "تم الإنشاء بواسطة <a href='https://happybites.io/?utm_source=happybites-plugin&utm_medium=pwa-footer&utm_campaign=created-by' target='_blank' class='text-primary'>Happybites</a>.",
+    "promo": "أنشئ قائمة QR الخاصة بك — مجانًا وباستضافة ذاتية عبر ووردبريس."
+  },
+  "language": { "select": "اختر اللغة" },
+  "social": { "title": "وسائل التواصل" },
+  "wifi": {
+    "title": "معلومات الاتصال بالواي فاي",
+    "description": "امسح رمز الاستجابة السريعة للاتصال بالواي فاي",
+    "ssid": "SSID",
+    "password": "كلمة المرور"
+  },
+  "review": {
+    "title": "قيّمنا",
+    "rateExperience": "قيّم تجربتك",
+    "service": "الخدمة",
+    "taste": "الطعم",
+    "cleanliness": "النظافة",
+    "comments": "ملاحظاتك",
+    "commentsPlaceholder": "شاركنا تجربتك...",
+    "submitting": "جارٍ الإرسال...",
+    "submitError": "تعذر إرسال تقييمك. يرجى المحاولة مرة أخرى.",
+    "privacyNotice": "تتم معالجة البيانات المرسلة وفقًا لـ",
+    "privacyPolicy": "سياسة الخصوصية",
+    "thankYou": "شكرًا لك!",
+    "thankYouMessage": "تعليقاتك ثمينة بالنسبة لنا. شكرًا على تقييمك!",
+    "customerInfoNote": "يمكنك مشاركة معلومات الاتصال اختياريًا لمساعدتنا على خدمتك بشكل أفضل.",
+    "customerName": "اسمك",
+    "customerNamePlaceholder": "أدخل اسمك",
+    "customerEmail": "بريدك الإلكتروني",
+    "customerEmailPlaceholder": "example@email.com",
+    "optional": "اختياري"
+  }
+}
+
+

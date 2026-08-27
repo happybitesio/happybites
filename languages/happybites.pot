@@ -1,0 +1,745 @@
+# Copyright (C) 2024-2026 HappyBites Team
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: HappyBites 2.0.2\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/happybites\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Domain: happybites\n"
+msgid "0 - Not Spicy"
+msgstr ""
+
+msgid "1 - Mild"
+msgstr ""
+
+msgid "2 - Medium"
+msgstr ""
+
+msgid "3 - Spicy"
+msgstr ""
+
+msgid "4 - Very Spicy"
+msgstr ""
+
+msgid "5 - Extremely Spicy"
+msgstr ""
+
+msgid "A category cannot be its own parent."
+msgstr ""
+
+msgid "A category cannot be moved under its own descendant."
+msgstr ""
+
+msgid "A new MCP token was generated. Copy it now; it will not be shown again."
+msgstr ""
+
+msgid "Accent Color"
+msgstr ""
+
+msgid "Accent color highlights important UI elements."
+msgstr ""
+
+msgid "Action"
+msgstr ""
+
+msgid "Active Languages"
+msgstr ""
+
+msgid "Acı Seviyesi"
+msgstr ""
+
+msgid "Add Additive"
+msgstr ""
+
+msgid "Add Allergen"
+msgstr ""
+
+msgid "Add Ingredient"
+msgstr ""
+
+msgid "Add New"
+msgstr ""
+
+msgid "Add New Category"
+msgstr ""
+
+msgid "Add New Menu Item"
+msgstr ""
+
+msgid "Add Nutrition"
+msgstr ""
+
+msgid "Additional Information"
+msgstr ""
+
+msgid "Additive name"
+msgstr ""
+
+msgid "Additives"
+msgstr ""
+
+msgid "Advanced features are displayed here."
+msgstr ""
+
+msgid "All Categories"
+msgstr ""
+
+msgid "Allergen Notes"
+msgstr ""
+
+msgid "Allergen name"
+msgstr ""
+
+msgid "Allergens"
+msgstr ""
+
+msgid "Amount"
+msgstr ""
+
+msgid "An error occurred while adding the category: "
+msgstr ""
+
+msgid "An error occurred while adding the product: "
+msgstr ""
+
+msgid "An error occurred while updating category name: "
+msgstr ""
+
+msgid "An error occurred while updating the category: "
+msgstr ""
+
+msgid "Ağırlık"
+msgstr ""
+
+msgid "Basic Information"
+msgstr ""
+
+msgid "Blue Slice"
+msgstr ""
+
+msgid "Bold red paired with sunny golden yellow."
+msgstr ""
+
+msgid "Canadian red with roasted coffee brown."
+msgstr ""
+
+msgid "Categories"
+msgstr ""
+
+msgid "Categories updated successfully"
+msgstr ""
+
+msgid "Category Description"
+msgstr ""
+
+msgid "Category Name"
+msgstr ""
+
+msgid "Category Selection"
+msgstr ""
+
+msgid "Category added successfully!"
+msgstr ""
+
+msgid "Category name cannot be empty!"
+msgstr ""
+
+msgid "Category name cannot be empty."
+msgstr ""
+
+msgid "Category name updated!"
+msgstr ""
+
+msgid "Category not found"
+msgstr ""
+
+msgid "Category not found."
+msgstr ""
+
+msgid "Category updated successfully!"
+msgstr ""
+
+msgid "Category updated."
+msgstr ""
+
+msgid "Chef Special"
+msgstr ""
+
+msgid "Choose Image"
+msgstr ""
+
+msgid "Choose Logo"
+msgstr ""
+
+msgid "Click \"Choose Logo\" to select your restaurant logo."
+msgstr ""
+
+msgid "Color Settings"
+msgstr ""
+
+msgid "Comment is too long."
+msgstr ""
+
+msgid "Corner Café"
+msgstr ""
+
+msgid "Country of Origin"
+msgstr ""
+
+msgid "Custom"
+msgstr ""
+
+msgid "Custom design is a HappyBites Pro feature."
+msgstr ""
+
+msgid "Customer Reviews"
+msgstr ""
+
+msgid "Dark Theme"
+msgstr ""
+
+msgid "Deep forest green with warm cream accents."
+msgstr ""
+
+msgid "Default Currency"
+msgstr ""
+
+msgid "Default Language"
+msgstr ""
+
+msgid "Default currency used for displaying prices."
+msgstr ""
+
+msgid "Default language is shown first to users."
+msgstr ""
+
+msgid "Defaults"
+msgstr ""
+
+msgid "Delivery blue with a sharp tomato red accent."
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Download QR Code"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Edit Category"
+msgstr ""
+
+msgid "Edit Menu Item"
+msgstr ""
+
+msgid "Edit Ordering"
+msgstr ""
+
+msgid "Eg: 100g, 1 portion, etc."
+msgstr ""
+
+msgid "Eg: If you type <code>menu</code>, URL becomes <code>%1$smenu</code>."
+msgstr ""
+
+msgid "Eg: Turkey, Italy, China, etc."
+msgstr ""
+
+msgid "Enter additional information in HTML format. You can use basic formatting."
+msgstr ""
+
+msgid "Enter preparation time in minutes"
+msgstr ""
+
+msgid "Enter the WiFi password required for connection."
+msgstr ""
+
+msgid "Enter the category description for this language"
+msgstr ""
+
+msgid "Enter the category name for this language"
+msgstr ""
+
+msgid "Enter your WiFi SSID."
+msgstr ""
+
+msgid "Enter your restaurant name."
+msgstr ""
+
+msgid "Enter your restaurant slogan."
+msgstr ""
+
+msgid "Etiketler"
+msgstr ""
+
+msgid "Failed to delete category."
+msgstr ""
+
+msgid "Failed to delete product."
+msgstr ""
+
+msgid "Failed to delete review."
+msgstr ""
+
+msgid "Failed to update review."
+msgstr ""
+
+msgid "Failed to update reviews."
+msgstr ""
+
+msgid "Fiery chicken-red with crisp black contrast."
+msgstr ""
+
+msgid "Friday"
+msgstr ""
+
+msgid "Fully customize every color."
+msgstr ""
+
+msgid "Glazed Ring"
+msgstr ""
+
+msgid "Gluten Free"
+msgstr ""
+
+msgid "Golden Bean"
+msgstr ""
+
+msgid "Golden Flame"
+msgstr ""
+
+msgid "HTML Information"
+msgstr ""
+
+msgid "HappyBites"
+msgstr ""
+
+msgid "HappyBites Plugin v"
+msgstr ""
+
+msgid "HappyBites admin build not found. Run npm run build in the admin-app/ directory."
+msgstr ""
+
+msgid "Header Background Image"
+msgstr ""
+
+msgid "Image"
+msgstr ""
+
+msgid "Image URL cannot be empty."
+msgstr ""
+
+msgid "Ingredient"
+msgstr ""
+
+msgid "Ingredients"
+msgstr ""
+
+msgid "Invalid post ID."
+msgstr ""
+
+msgid "Invalid request body."
+msgstr ""
+
+msgid "Invalid response from license server."
+msgstr ""
+
+msgid "Italian espresso red with polished silver tones."
+msgstr ""
+
+msgid "Kategori"
+msgstr ""
+
+msgid "Language Settings"
+msgstr ""
+
+msgid "License activated successfully."
+msgstr ""
+
+msgid "License activation did not return an instance ID."
+msgstr ""
+
+msgid "License activation failed."
+msgstr ""
+
+msgid "License deactivated on this site."
+msgstr ""
+
+msgid "License request failed."
+msgstr ""
+
+msgid "License status refreshed."
+msgstr ""
+
+msgid "Light Theme"
+msgstr ""
+
+msgid "Logo URL"
+msgstr ""
+
+msgid "Luxury emerald with champagne gold."
+msgstr ""
+
+msgid "MCP is a HappyBites Pro feature."
+msgstr ""
+
+msgid "Maple Roast"
+msgstr ""
+
+msgid "Maximum category depth is 2 levels."
+msgstr ""
+
+msgid "Menu"
+msgstr ""
+
+msgid "Menu Address"
+msgstr ""
+
+msgid "Menu Categories"
+msgstr ""
+
+msgid "Menu Category"
+msgstr ""
+
+msgid "Menu Item"
+msgstr ""
+
+msgid "Menu Item Details"
+msgstr ""
+
+msgid "Menu Items"
+msgstr ""
+
+msgid "Menu Management"
+msgstr ""
+
+msgid "Milano Roast"
+msgstr ""
+
+msgid "Monday"
+msgstr ""
+
+msgid "Multilingual Content"
+msgstr ""
+
+msgid "Neighborhood coffee browns and warm beige."
+msgstr ""
+
+msgid "New Category Name"
+msgstr ""
+
+msgid "New Menu Item"
+msgstr ""
+
+msgid "New Product"
+msgstr ""
+
+msgid "No Category Selected"
+msgstr ""
+
+msgid "No category selected"
+msgstr ""
+
+msgid "No image"
+msgstr ""
+
+msgid "No menu items found"
+msgstr ""
+
+msgid "No menu items found in trash"
+msgstr ""
+
+msgid "Nutrient"
+msgstr ""
+
+msgid "Nutrition Facts"
+msgstr ""
+
+msgid "Open QR Menu"
+msgstr ""
+
+msgid "Organic"
+msgstr ""
+
+msgid "Out of Stock"
+msgstr ""
+
+msgid "PWA build folder not found. Run npm run build in the pwa/ directory."
+msgstr ""
+
+msgid "Parent Category"
+msgstr ""
+
+msgid "Parent Category:"
+msgstr ""
+
+msgid "Parent category not found."
+msgstr ""
+
+msgid "Playful orange glaze with raspberry pink."
+msgstr ""
+
+msgid "Please enter a license key."
+msgstr ""
+
+msgid "Please select at least one language first."
+msgstr ""
+
+msgid "Popular"
+msgstr ""
+
+msgid "Portion Size"
+msgstr ""
+
+msgid "Preparation Time (minutes)"
+msgstr ""
+
+msgid "Prestige Green"
+msgstr ""
+
+msgid "Price"
+msgstr ""
+
+msgid "Price cannot be negative."
+msgstr ""
+
+msgid "Primary Color"
+msgstr ""
+
+msgid "Primary color is used for key UI backgrounds."
+msgstr ""
+
+msgid "Product added successfully!"
+msgstr ""
+
+msgid "Product name cannot be empty."
+msgstr ""
+
+msgid "Product not found."
+msgstr ""
+
+msgid "Products updated successfully"
+msgstr ""
+
+msgid "Provide image_url or image_id."
+msgstr ""
+
+msgid "QR Menu"
+msgstr ""
+
+msgid "Ratings must be between 1 and 5."
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+msgid "Remove Image"
+msgstr ""
+
+msgid "Remove Logo"
+msgstr ""
+
+msgid "Restaurant Information"
+msgstr ""
+
+msgid "Restaurant Name"
+msgstr ""
+
+msgid "Rich burgundy with soft roasted gold."
+msgstr ""
+
+msgid "Royal navy blue with heritage gold highlights."
+msgstr ""
+
+msgid "Saturday"
+msgstr ""
+
+msgid "Scan the QR code to view the mobile menu"
+msgstr ""
+
+msgid "Search Categories"
+msgstr ""
+
+msgid "Search Menu Items"
+msgstr ""
+
+msgid "Seasonal"
+msgstr ""
+
+msgid "Security check failed."
+msgstr ""
+
+msgid "Security verification failed. Please try again."
+msgstr ""
+
+msgid "Select"
+msgstr ""
+
+msgid "Select a background image for the header area. Recommended ratio ~16:9."
+msgstr ""
+
+msgid "Select open days and set opening/closing times."
+msgstr ""
+
+msgid "Select or Upload Image"
+msgstr ""
+
+msgid "Select supported languages for menu items. You can enter separate content for each language."
+msgstr ""
+
+msgid "Select the default language and currency for the application."
+msgstr ""
+
+msgid "Select the theme mode."
+msgstr ""
+
+msgid "Selected languages will appear as tabs on the menu item editor."
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "Slogan"
+msgstr ""
+
+msgid "Social Media"
+msgstr ""
+
+msgid "Social Media Links"
+msgstr ""
+
+msgid "Southern Spice"
+msgstr ""
+
+msgid "Spice Level"
+msgstr ""
+
+msgid "Spicy"
+msgstr ""
+
+msgid "Status must be publish or draft."
+msgstr ""
+
+msgid "Subcategories updated successfully"
+msgstr ""
+
+msgid "Sunday"
+msgstr ""
+
+msgid "Tags"
+msgstr ""
+
+msgid "Theme Mode"
+msgstr ""
+
+msgid "This is a HappyBites shortcode example."
+msgstr ""
+
+msgid "This license key is not valid for HappyBites Pro."
+msgstr ""
+
+msgid "Thursday"
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "Too many reviews submitted. Please try again later."
+msgstr ""
+
+msgid "Tuesday"
+msgstr ""
+
+msgid "Turin Classic"
+msgstr ""
+
+msgid "URL Slug"
+msgstr ""
+
+msgid "Update Category"
+msgstr ""
+
+msgid "Use this image"
+msgstr ""
+
+msgid "Value"
+msgstr ""
+
+msgid "Vegan"
+msgstr ""
+
+msgid "Vegetarian"
+msgstr ""
+
+msgid "Velvet Bean"
+msgstr ""
+
+msgid "Verdant Brew"
+msgstr ""
+
+msgid "View Menu Item"
+msgstr ""
+
+msgid "Warm café brown with bright golden highlights."
+msgstr ""
+
+msgid "Wednesday"
+msgstr ""
+
+msgid "Weight (grams)"
+msgstr ""
+
+msgid "WiFi Information"
+msgstr ""
+
+msgid "WiFi Password"
+msgstr ""
+
+msgid "WiFi SSID"
+msgstr ""
+
+msgid "Working Hours"
+msgstr ""
+
+msgid "You are not allowed to do this."
+msgstr ""
+
+msgid "You can add additional information here."
+msgstr ""
+
+msgid "You can configure WiFi information here."
+msgstr ""
+
+msgid "You can configure restaurant working hours here."
+msgstr ""
+
+msgid "You can configure the primary colors here."
+msgstr ""
+
+msgid "You can configure your restaurant information here."
+msgstr ""
+
+msgid "You can configure your social media links here."
+msgstr ""
+
+msgid "You can customize your menu URL here."
+msgstr ""
+
+msgid "You can set the restaurant theme mode here."
+msgstr ""
+
+msgid "You do not have permission to do this."
+msgstr ""
+
+msgid "reCAPTCHA verification failed."
+msgstr ""
+
+msgid "reCAPTCHA verification is invalid."
+msgstr ""
+
+msgid "reCAPTCHA verification is required."
+msgstr ""
+
