@@ -35,7 +35,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
           cache: npm
           cache-dependency-path: |
             admin-app/package-lock.json
@@ -50,7 +50,7 @@ jobs:
       - name: Build PWA
         working-directory: pwa
         run: |
-          npm ci
+          npm ci --legacy-peer-deps
           npm run build
 
       - name: Package plugin zip
