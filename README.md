@@ -35,6 +35,9 @@ The guest menu never adds a HappyBites credit unless you turn it on.
 | Guest reviews | ✓ | ✓ |
 | Custom design, logo themes, header overlay | | ✓ |
 | Instagram-style menu stories | | ✓ |
+| Footer bar on the guest menu | | ✓ |
+| Analytics (Google Tag Manager) | | ✓ |
+| Menu import & export | | ✓ |
 | AI agents (MCP) to manage the menu | | ✓ |
 
 ## Get started
@@ -44,10 +47,12 @@ The guest menu never adds a HappyBites credit unless you turn it on.
 3. Copy the menu URL or QR code from **Settings → General**.
 4. Put the code on the table. That’s it.
 
-Need AI tools, stories, or a fully custom look? Install [HappyBites Pro](https://happybites.io/checkout) and activate your license under **HappyBites → License**.
+Need a custom look, stories, analytics, a footer bar, or AI tools? Install [HappyBites Pro](https://happybites.io/checkout) and activate your license under **HappyBites → License**.
 
 ## For developers
 
 HappyBites is GPL-licensed WordPress software. React source for the admin and guest menu lives in `admin-app/` and `pwa/` (`npm install` then `npm run build` in each folder).
+
+To publish a GitHub Release, bump the version in `happybites.php` and `readme.txt`, then push a matching tag (`v2.0.5`). Actions builds the plugin zip and attaches it to the release with the changelog from `readme.txt`.
 
 Questions or partnership: [happybites.io](https://happybites.io)
