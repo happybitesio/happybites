@@ -3,9 +3,9 @@ admin-app/node_modules/
 pwa/node_modules/
 admin-app/dist/
 pwa/dist/
-dist/
-scripts/
-tools/
+/dist/
+/scripts/
+/tools/
 .DS_Store
 Thumbs.db
 *.log
