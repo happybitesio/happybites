@@ -1,0 +1,67 @@
+# Deploy to WordPress.org SVN when a version tag is pushed.
+# Requires repo secrets: SVN_USERNAME, SVN_PASSWORD (WordPress.org credentials).
+#
+# Local alternative (no CI secrets): scripts/deploy-wporg.ps1
+
+name: Deploy WordPress.org
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+      - "*.*.*"
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Read plugin version
+        id: plugin
+        run: |
+          VERSION="$(python3 .github/scripts/package-plugin.py version)"
+          TAG="${GITHUB_REF_NAME#v}"
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+          if [ "${VERSION}" != "${TAG}" ]; then
+            echo "Tag ${GITHUB_REF_NAME} does not match Version ${VERSION} in happybites.php"
+            exit 1
+          fi
+          STABLE="$(grep -E '^Stable tag:' readme.txt | awk '{print $3}' | tr -d '\r')"
+          if [ "${VERSION}" != "${STABLE}" ]; then
+            echo "Stable tag ${STABLE} does not match Version ${VERSION}"
+            exit 1
+          fi
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: |
+            admin-app/package-lock.json
+            pwa/package-lock.json
+
+      - name: Build admin app
+        working-directory: admin-app
+        run: |
+          npm ci
+          npm run build
+
+      - name: Build PWA
+        working-directory: pwa
+        run: |
+          npm ci --legacy-peer-deps
+          npm run build
+
+      - name: WordPress Plugin Deploy
+        uses: 10up/action-wordpress-plugin-deploy@stable
+        env:
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+          SLUG: happybites
+          VERSION: ${{ steps.plugin.outputs.version }}

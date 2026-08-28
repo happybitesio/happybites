@@ -53,6 +53,33 @@ Need a custom look, stories, analytics, a footer bar, or AI tools? Install [Happ
 
 HappyBites is GPL-licensed WordPress software. React source for the admin and guest menu lives in `admin-app/` and `pwa/` (`npm install` then `npm run build` in each folder).
 
-To publish a GitHub Release, bump the version in `happybites.php` and `readme.txt`, then push a matching tag (`v2.0.5`). Actions builds the plugin zip and attaches it to the release with the changelog from `readme.txt`.
+### Source of truth
+
+- **Develop only in this Git repo** (e.g. Laragon `wp-content/plugins/happybites`).
+- **WordPress.org SVN is a deploy target**, not a second place to edit code.
+- Do not hand-copy files from C: to the SVN working copy.
+
+### Local WordPress.org deploy
+
+```powershell
+# Preview (build + stage only, no SVN write)
+powershell -ExecutionPolicy Bypass -File .\scripts\deploy-wporg.ps1 -DryRun
+
+# Commit trunk
+powershell -ExecutionPolicy Bypass -File .\scripts\deploy-wporg.ps1
+
+# Commit trunk + recreate tags/<version> (Stable tag must match happybites.php)
+powershell -ExecutionPolicy Bypass -File .\scripts\deploy-wporg.ps1 -Tag
+```
+Default SVN root: `D:\PROJECTS\PhpProjects\happybites-svn` (override with `-SvnRoot`).
+
+Banners/screenshots stay in SVN `assets/` beside `trunk/` — update those separately when needed.
+
+### GitHub Release + optional.org deploy
+
+1. Bump version in `happybites.php` and `readme.txt` (`Stable tag`).
+2. Push a matching tag (`v2.0.6` or `2.0.6`).
+3. `release.yml` builds the zip and creates a GitHub Release.
+4. `deploy-wporg.yml` (optional) pushes the same build to plugins.svn.wordpress.org via [10up/action-wordpress-plugin-deploy](https://github.com/10up/action-wordpress-plugin-deploy). Set repo secrets `SVN_USERNAME` and `SVN_PASSWORD`.
 
 Questions or partnership: [happybites.io](https://happybites.io)
