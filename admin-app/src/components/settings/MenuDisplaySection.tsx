@@ -121,7 +121,7 @@ export function MenuDisplaySection({ settings, onChange, pro }: Props) {
   const proStatus: ProStatus = pro || settings.pro || {
     is_pro: false,
     checkout_url:
-      'https://happybites.io/checkout?utm_source=happybites-plugin&utm_medium=admin-upsell&utm_campaign=pro-checkout',
+      'https://happybites.io/?utm_source=happybites-plugin&utm_medium=admin-upsell&utm_campaign=pro',
     features: { mcp: false, custom_design: false, stories: false },
   };
   const canStories = proStatus.is_pro || proStatus.features.stories;

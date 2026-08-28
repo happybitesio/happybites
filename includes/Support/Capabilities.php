@@ -21,7 +21,7 @@ if (!defined('ABSPATH')) {
 final class Capabilities
 {
     /** Fallback upsell URL when Pro is not installed. */
-    public const CHECKOUT_URL = 'https://happybites.io/checkout?utm_source=happybites-plugin&utm_medium=admin-upsell&utm_campaign=pro-checkout';
+    public const CHECKOUT_URL = 'https://happybites.io/?utm_source=happybites-plugin&utm_medium=admin-upsell&utm_campaign=pro';
 
     public static function is_pro(): bool
     {

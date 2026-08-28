@@ -33,7 +33,7 @@ The free plugin includes the full menu, presets, reviews, and multi-language sup
 * Menu import and export
 * MCP — AI agent menu management
 
-Purchase: https://happybites.io/checkout
+Purchase: https://happybites.io
 
 Install HappyBites Pro and enter your license key under **HappyBites → License**.
 
@@ -60,7 +60,7 @@ The privacy policy link is shown on the guest review form. Under **Settings → 
 
 = Can AI agents manage my menu? =
 
-MCP is a **HappyBites Pro** feature. Purchase at https://happybites.io/checkout, install the HappyBites Pro add-on, activate your license under **License**, then enable MCP under **Settings → MCP**.
+MCP is a **HappyBites Pro** feature. Purchase at https://happybites.io, install the HappyBites Pro add-on, activate your license under **License**, then enable MCP under **Settings → MCP**.
 
 = What is HappyBites Pro? =
 
@@ -91,6 +91,14 @@ Google reCAPTCHA: https://www.google.com/recaptcha/about/
 == Source code ==
 
 Compiled admin and guest-menu JavaScript ships in `public/admin/` and `public/pwa/`. The corresponding source and build tools are included in `admin-app/` and `pwa/` (run `npm install` then `npm run build` in each folder). Development repository: https://github.com/happybitesio/happybites
+
+== Screenshots ==
+
+1. Menu Items
+2. Menu Management
+3. Reviews
+4. Settings - Themes
+5. Settings - QR Code Generation
 
 == Changelog ==
 
